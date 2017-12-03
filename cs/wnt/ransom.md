@@ -15,7 +15,7 @@ V současnosti evidujeme cca. 450 různých rodin ransomware (počítám jen ty 
 
 Níže si povíme, jak správně identifikovat rodinu ransomware, zjistit, zdali pro ni existuje dekrypter &ndash; pokud ano, jak obnovit data. Následně si řekneme, jak se ransomware zbavit.
 
-Než začneme, měli bychom zmínit ještě jednu věc. Některé rodiny ransomware ve svém zobrazovacím okně zobrazují odpočítávání a hrozí postupným mazáním dat (zde [příklad](https://faq.mople71.cz/img/en/jigsaw.png)). V takovém případě je doporučeno v prvé řadě <span class="red">PC urychleně vypnout a již nezapínat!</span>
+Než začneme, měli bychom zmínit ještě jednu věc. Některé rodiny ransomware ve svém zobrazovacím okně zobrazují odpočítávání a hrozí postupným mazáním dat (zde [příklad](https://guide.mople71.cz/img/en/jigsaw.png)). V takovém případě je doporučeno v prvé řadě <span class="red">PC urychleně vypnout a již nezapínat!</span>
 
 <br>
 
@@ -40,7 +40,7 @@ Po zajištění vzorku ransomware jej analyzujte webovou službou [VirusTotal](h
 - Pokud VirusTotal oznámí, že soubor již byl skenovaný, klikněte na tlačítko <span class="green">Analyzovať opäť</span>.
 - Vyčkejte na výsledek analýzy. Po dokončení se vám zobrazí výsledky.
 - Zde můžete vidět, jak daný ransomware detekují různé AV. Nejpřesnější výsledky dodává společnost <span class="green">Malwarebytes</span>, její výsledek můžete porovnat s výsledky společností **TrendMicro**, **Emsisoft**, **Microsoft**, **ESET** a **Kaspersky**. Spoustu informací také můžete naleznout v komentářích.</li>
-<li style="list-style-type: none">![vt](https://faq.mople71.cz/img/cs/vt.png)</li>
+<li style="list-style-type: none">![vt](https://guide.mople71.cz/img/cs/vt.png)</li>
 
 ![idea](https://mople71.cz/img/sm/idea.gif) V našem případě ransomware CryptoHitman (varianta Jigsaw) byla správně rozpoznána databází Malwarebytes, ESET, Microsoft a TrendMicro. Kaspersky jej chybně určil jako příslušníka Crypren rodiny a Emsisoft jej v databázi neměl.
 
@@ -59,24 +59,24 @@ Pokud můžete, překopírujte veškerá svá zašifrovaná data na jiné úlož
 
 - Otevřete si dvě kopie (ve dvou panelech) stránky [ID Ransomware](https://id-ransomware.malwarehunterteam.com/index.php?lang=cs_CZ).
 - Nejprve v prvním panelu nahrajte jeden ze zašifrovaných souborů a vyčkejte na výsledek.
-<li style="list-style-type: none">![idrw](https://faq.mople71.cz/img/cs/idrw.png)</li>
+<li style="list-style-type: none">![idrw](https://guide.mople71.cz/img/cs/idrw.png)</li>
 - Přesuňte se do druhého panelu, ve kterém nahrajte soubor s instrukcemi k dešifrování a vyčkejte na výsledek.
-<li style="list-style-type: none">![idrw1](https://faq.mople71.cz/img/cs/idrw1.png)</li>
+<li style="list-style-type: none">![idrw1](https://guide.mople71.cz/img/cs/idrw1.png)</li>
 - Výsledky v obou panelech porovnejte a měli byste dojít k jasnému výsledku. ID Ransomware vám také prozradí, zdali je možné daný ransomware možné zdarma dešifrovat.
-<li style="list-style-type: none">![idrw2](https://faq.mople71.cz/img/cs/idrw2.png)</li>
+<li style="list-style-type: none">![idrw2](https://guide.mople71.cz/img/cs/idrw2.png)</li>
 
 > Možné výsledky ID Ransomware
 
 - V případě snadné možnosti obnovy dat IDR zobrazí následující hlášku a obvykle vás pošle přímo k dekryptoru &ndash; stačí kliknout na <span class="red">Klikněte zde pro více informací o ****</span>.
-<li style="list-style-type: none">![idrw2](https://faq.mople71.cz/img/cs/idrw2.png)</li>
+<li style="list-style-type: none">![idrw2](https://guide.mople71.cz/img/cs/idrw2.png)</li>
 - V případě složitější a problematičtější možnosti obnovy dat zobrazí IDR následující hlášku. V takovém případě to již chce použít Google a mít nadprůměrné znalosti IT. Nebo si zde založte téma, rádi vám pomůžeme.
-<li style="list-style-type: none">![idrw3](https://faq.mople71.cz/img/cs/idrw3.png)</li>
+<li style="list-style-type: none">![idrw3](https://guide.mople71.cz/img/cs/idrw3.png)</li>
 - V případě kompletní absence dekrypteru zobrazí IDR následující hlášku. V tomto případě je opravdu jediná možnost data zálohovat a čekat na dekryptor.
-<li style="list-style-type: none">![idrw4](https://faq.mople71.cz/img/cs/idrw4.png)</li>
+<li style="list-style-type: none">![idrw4](https://guide.mople71.cz/img/cs/idrw4.png)</li>
 - Pokud se jedná o čerstvou rodinu ransomware, která ještě není dostatečně zdokumentovaná a analyzovaná, zobrazí IDR následující hlášku. V tomto případě použijte Google, případně se zde zeptejte.
-<li style="list-style-type: none">![idrw5](https://faq.mople71.cz/img/cs/idrw5.png)</li>
+<li style="list-style-type: none">![idrw5](https://guide.mople71.cz/img/cs/idrw5.png)</li>
 - Pokud IDR daný ransomware nezná, zobrazí následující hlášku. V tomto případě doporučuji založit si zde vlákno, může se totiž jednat o známý a dešifrovatelný ransomware, který služba jenom nezná. Pokud se opravdu jedná o čerstvý nezdokumentovaný kousek, poskytnutím svých vzorků a informací můžete pomoci dekryptor vytvořit.
-<li style="list-style-type: none">![idrw6](https://faq.mople71.cz/img/cs/idrw6.png)</li>
+<li style="list-style-type: none">![idrw6](https://guide.mople71.cz/img/cs/idrw6.png)</li>
 
 <br><br><hr><br>
 
