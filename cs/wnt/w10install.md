@@ -37,8 +37,8 @@ select disk X         //místo "X" dosaďte číslo vašeho systémového disku
 clean                 //vyčistí zvolený disk
 exit
 exit</code></pre></li>
-<li style="list-style-type: none">![w10diskpart](https://mople71.cz/img/cs/w10diskpart.png)</li>
-- Ve výběru disků klikněte na tlačítko: ![upd](https://mople71.cz/img/cs/upd.png)
+<li style="list-style-type: none">![w10diskpart](https://guide.mople71.cz/img/cs/w10diskpart.png)</li>
+- Ve výběru disků klikněte na tlačítko: ![upd](https://guide.mople71.cz/img/cs/upd.png)
 - Zvolte prázdný vyčištěný systémový disk a pokračujte v instalaci.
 
 <br><br><hr>

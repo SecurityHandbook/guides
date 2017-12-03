@@ -15,7 +15,7 @@ V současnosti evidujeme cca. 450 různých rodin ransomware (počítám jen ty 
 
 Níže si povíme, jak správně identifikovat rodinu ransomware, zjistit, zdali pro ni existuje dekrypter &ndash; pokud ano, jak obnovit data. Následně si řekneme, jak se ransomware zbavit.
 
-Než začneme, měli bychom zmínit ještě jednu věc. Některé rodiny ransomware ve svém zobrazovacím okně zobrazují odpočítávání a hrozí postupným mazáním dat (zde [příklad](https://faq.mople71.cz/img/en/jigsaw.png)\). V takovém případě je doporučeno v prvé řadě <span class="red">PC urychleně vypnout a již nezapínat!</span>
+Než začneme, měli bychom zmínit ještě jednu věc. Některé rodiny ransomware ve svém zobrazovacím okně zobrazují odpočítávání a hrozí postupným mazáním dat (zde [příklad](https://faq.mople71.cz/img/en/jigsaw.png)). V takovém případě je doporučeno v prvé řadě <span class="red">PC urychleně vypnout a již nezapínat!</span>
 
 <br>
 
@@ -29,7 +29,7 @@ Váš úkol je tedy zajistit vzorek pro spolehlivou identifikaci za použití je
 
 > Návod
 
-Vzorek ransomware obvykle nalezete v lokacích <span class="blue">%appdata%</span>, <span class="blue">%localappdata%</span> a <span class="blue">%temp%</span>. Pokud nevíte, jak se do těchto lokací dostat, stiskněte kláv. zkratku ![win](https://mople71.cz/img/wkey.png) <span class="ks">+ R</span>, do textového pole následně zadejte požadovanou cestu (např. %appdata%) a stiskněte **Enter**.
+Vzorek ransomware obvykle nalezete v lokacích <span class="blue">%appdata%</span>, <span class="blue">%localappdata%</span> a <span class="blue">%temp%</span>. Pokud nevíte, jak se do těchto lokací dostat, stiskněte kláv. zkratku ![win](https://mople71.cz/img/icons/wkey.png) <span class="ks">+ R</span>, do textového pole následně zadejte požadovanou cestu (např. %appdata%) a stiskněte **Enter**.
 
 Také se můžete ve Správci úloh podívat na běžící procesy, identifikovat běžící ransomware, kliknout na něj pravým tlačítkem a otevřít lokaci procesu. V obou případech aplikaci zkopírujte **na Plochu**.
 
