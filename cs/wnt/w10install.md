@@ -28,6 +28,8 @@ Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je ro
 
 ![exclaim](https://mople71.cz/img/sm/exclaim.gif) **Pouze pro pokročilé!**
 
+> Návod
+
 - Ve výběru možnosti instalace zvolte: Vlastní: Jenom nainstalovat Windows (pokročilé).
 - Ve výběru disků stiskněte **Shift** + **F10**.
 - Do příkazové řádky postupně zadejte následující příkazy:
