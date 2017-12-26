@@ -1,6 +1,6 @@
 # Čistá instalace Windows 10
 
-Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. Budete potřebovat volné médium (DVD, USB disk) o velikosti alespoň *8 GB* a funkční počítač, ze kterého něj můžete nahrát instalační soubory Windows.
+Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. Budete potřebovat volné médium (DVD, USB disk) o velikosti alespoň *8 GB* a funkční počítač, ze kterého na něj můžete nahrát instalační soubory Windows.
 
 <br>
 

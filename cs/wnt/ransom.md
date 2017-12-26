@@ -1,5 +1,4 @@
 # Zašifrovaná data &ndash; jak postupovat při infikaci ransomware
-*&bdquo;Co to je, jak se to tam dostalo, co mám dělat...&ldquo;*
 
 Ransomware je aktuálně nejoblíbenější technika hackerů, jak si vcelku jednoduše vydělat slušné peníze. Jedná se o druh malware, který po svém spuštění uživateli zablokuje přístup ke všem datům (nejčastěji zašifrováním dat), a následně za jejich dešifrování požaduje peníze.
 
