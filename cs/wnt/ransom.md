@@ -3,7 +3,7 @@
 
 Ransomware je aktuálně nejoblíbenější technika hackerů, jak si vcelku jednoduše vydělat slušné peníze. Jedná se o druh malware, který po svém spuštění uživateli zablokuje přístup ke všem datům (nejčastěji zašifrováním dat), a následně za jejich dešifrování požaduje peníze.
 
-Platby drtivá většina ransomware požaduje v anonymní měně bitcoin (BTC). Ceny za dešifrování se pohybují od 0.1 BTC (~6.000 CZK) do 48 BTC (~3.000.000 CZK).
+Platby drtivá většina ransomware požaduje v anonymní měně bitcoin (BTC). Ceny za dešifrování se pohybují od 0.1 BTC (~34.000 CZK) do 48 BTC (~16.320.000 CZK).
 
 Ransomware se do OS nejčastěji dostane lidskou chybou &ndash; příloha k mailu, zdánlivě bezpečná aplikace, odkliknutí bezpečnostního varování apod. Také se ovšem do OS může dostat chybou v děravém síťovém SW jako Flash nebo Java, dokonce někdy stačí pouze otevřít stránku se škodlivou reklamou.
 
@@ -33,16 +33,13 @@ Vzorek ransomware obvykle nalezete v lokacích <span class="blue">%appdata%</spa
 
 Také se můžete ve Správci úloh podívat na běžící procesy, identifikovat běžící ransomware, kliknout na něj pravým tlačítkem a otevřít lokaci procesu. V obou případech aplikaci zkopírujte **na Plochu**.
 
-Po zajištění vzorku ransomware jej analyzujte webovou službou [VirusTotal](https://virustotal.com/sk/). Není dostupná v češtině, ale alespoň ve slovenštině.
+Po zajištění vzorku ransomware jej analyzujte webovou službou [VirusTotal](https://virustotal.com/).
 
-- Navětivte [VirusTotal](https://virustotal.com/sk/).
-- Klikněte na tlačítko <span class="green">Vyber súbor</span>, vyberte požadovaný vzorek ransomware a klikněte na <span class="green">Skenuj!</span>.
-- Pokud VirusTotal oznámí, že soubor již byl skenovaný, klikněte na tlačítko <span class="green">Analyzovať opäť</span>.
-- Vyčkejte na výsledek analýzy. Po dokončení se vám zobrazí výsledky.
-- Zde můžete vidět, jak daný ransomware detekují různé AV. Nejpřesnější výsledky dodává společnost <span class="green">Malwarebytes</span>, její výsledek můžete porovnat s výsledky společností **TrendMicro**, **Emsisoft**, **Microsoft**, **ESET** a **Kaspersky**. Spoustu informací také můžete naleznout v komentářích.</li>
-<li style="list-style-type: none">![vt](https://guide.mople71.cz/img/cs/vt.png)</li>
-
-![idea](https://mople71.cz/img/sm/idea.gif) V našem případě ransomware CryptoHitman (varianta Jigsaw) byla správně rozpoznána databází Malwarebytes, ESET, Microsoft a TrendMicro. Kaspersky jej chybně určil jako příslušníka Crypren rodiny a Emsisoft jej v databázi neměl.
+- Navštivte [VirusTotal](https://virustotal.com/).
+- Klikněte na tlačítko <span class="green">Nahrát a zkontrolovat soubor</span> a vyberte požadovaný vzorek ransomware.
+- Uplynulo-li posledního skenu více než 24 hodin, kliknutím na tři tečky v horním pravém rohu rozbalte menu a zvolte možnost <span class="green">Analyzovat znovu</span>.
+- Po dokončení analýzy se vám zobrazí výsledky.
+- Zde můžete vidět, jak daný ransomware detekují různé AV. Důležité informace také můžete naleznout v komentářích.</li>
 
 Nyní tedy snad víme, o co se jedná. Díky tomu můžeme snadno dohledat dekrypter &ndash; pokud existuje. Pokud ne, máme v tuto chvíli smůlu.
 
@@ -53,7 +50,7 @@ Jak již bylo zmíněno výše, díky analytikovi *Michael Gillespie* skupině *
 
 Pokud OS můžete normálně používat a ransomware neukazuje odpočítávání, klidně můžete k PC připojit USB disk (samozřejmě prázdný, jinak riskujete zašifrování jeho obsahu) a jedoduše požadované soubory např. z Plochy na disk přetáhnout. Riziko přenosu infekce na flash disk a následné infikace jiného OS je mizivé.
 
-Pokud OS nelze používat nebo ransomware ukazuje odpočítávání a hrozí postupným mazáním dat, případně pokud si jen chcete být jistí, je doporučeno v prvé řadě <span class="red">OS urychleně vypnout</span>. Následně stáhněte live linux ISO (např. [Fedora](https://getfedora.org/cs/workstation/)\), vytvořte si bootovací USB disk a nabootujte z něj na infikovaném PC.
+Pokud OS nelze používat nebo ransomware ukazuje odpočítávání a hrozí postupným mazáním dat, případně pokud si jen chcete být jistí, je doporučeno v prvé řadě <span class="red">OS urychleně vypnout</span>. Následně stáhněte live linux ISO (např. [Fedora](https://getfedora.org/cs/workstation/)), vytvořte si bootovací USB disk a nabootujte z něj na infikovaném PC.
 
 Pokud můžete, překopírujte veškerá svá zašifrovaná data na jiné úložiště. Tento krok byste s největší pravděpodobností stejně museli provést v pozdější fázi. Pokud u sebe aktuálně nemáte dostatečně velké médium, překopírujte pouze dva libovolné zašifrované soubory a soubor s instrukcemi (obvykle něco jako *HELP_DECRYPT.TXT*, bývá na Ploše, případně v Dokumentech). Následně soubory přesuňte na PC s přístupem k internetu a můžeme zjistit, jakým ransomware jsou data šifrována.
 
@@ -102,7 +99,7 @@ Vzhledem k tomu, co jsou některé rodiny ransomware schopny provést s/v OS, ne
 Návody na čistou instalaci + vyčištění disku (DISKPART část v návodech) naleznete zde:
 
 - [Čistá instalace Windows 10](https://guide.mople71.cz/cs/wnt/w10install.php)
-- [Čistá instalace Windows 8.1](https://forum.zive.cz/viewtopic.php?f=1932&t=1229478)
+- [Čistá instalace Windows 8.1](https://guide.mople71.cz/cs/wnt/w8install.php)
 - [Čistá instalace Windows 7](https://forum.zive.cz/viewtopic.php?f=1864&t=1235730)
 
 <br><br><hr><br>

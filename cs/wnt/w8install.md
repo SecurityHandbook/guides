@@ -1,20 +1,20 @@
-# Čistá instalace Windows 10
+# Čistá instalace Windows 8.1
 
 Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. Budete potřebovat volné médium (DVD, USB disk) o velikosti alespoň *8 GB* a funkční počítač, ze kterého něj můžete nahrát instalační soubory Windows.
 
 <br>
 
-## Stažení originálního ISO Windows 10:
+## Stažení originálního ISO Windows 8.1:
 
-![arrow](https://mople71.cz/img/sm/arrow.gif) Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.microsoft.com/cs-cz/software-download/windows10ISO
+![arrow](https://mople71.cz/img/sm/arrow.gif) Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.microsoft.com/cs-cz/software-download/windows8ISO
 
-## Vytvoření instalačního média Windows 10:
+## Vytvoření instalačního média Windows 8.1:
 
 - Vytvořte instalační médium z ISO souboru, pro USB doporučím program [Rufus](https://rufus.akeo.ie/) (návod [zde](http://www.cnews.cz/navody/rufus-vytvorte-zavadeci-flash-disk-s-nejrychlejsim-nastrojem-ze-vsech)).
 - Nabootujte z vytvořeného instalačního média.
 - Zkontrolujte konfiguraci jazyka a klávesnice a klikněte na tlačítko <span class="green">Další</span>.
 - Klikněte na tlačítko <span class="green">Nainstalovat</span>.
-- Vložte licenční klíč (pokud provádíte upgrade, použijte klíč z předchozí verze Windows).
+- Vložte licenční klíč (máte-li OEM licenci dodanou s NTB, klíč není potřeba).
 - Zvolte požadovanou edici OS.
 - Přijměte licenční podmínky a pokračujte v instalaci.
 
