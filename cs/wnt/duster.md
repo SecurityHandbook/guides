@@ -2,11 +2,12 @@
 
 <h3 class="red">![ch](https://mople71.cz/img/icons/ccleaner.png) Varování &ndash; CCleaner a podobné čističe</h3>
 
-![exclaim](https://mople71.cz/img/sm/exclaim.gif) Čističe OS čistící registry jsou pro OS nebezpečné, nedoporučované a Microsoftem nepodporované.
+Čističe OS čistící registry jsou pro OS nebezpečné, nedoporučované a Microsoftem nepodporované.
 
-![idea](https://mople71.cz/img/sm/idea.gif) Přečtěte si prosím zásady podpory Microsoftu: https://support.microsoft.com/cs-cz/kb/2563254
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+Přečtěte si prosím zásady podpory Microsoftu: <a href="https://support.microsoft.com/cs-cz/kb/2563254">https://support.microsoft.com/cs-cz/kb/2563254</a></p></div>
 
-#### Rizika užívání čističů registru:
+### Rizika užívání čističů registru:
 - mohou způsobit nevratné škody vašemu registru => OS
 - mohou s sebou do OS přinést malware
 - mohou registr spíše zpomalit než zrychlit
@@ -16,7 +17,8 @@
 
 Spousta problémů s OS, se kterými se denně potkávám na různých fórech, je způsobena právě čističi registru, defragmentátory registru, optimizéry registru apod.
 
-![idea](https://mople71.cz/img/sm/idea.gif) Registr je velká hierarchická databáze obsahující miliony hodnot, které určují chod OS. Máte-li nějakou databázi, také do ní nevpustíte naprosto cizí program, který vám databázi vyčistí na základě svých generických pravidel.
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+Registr je velká hierarchická databáze obsahující miliony hodnot, které určují chod OS. Máte-li nějakou databázi, také do ní nevpustíte naprosto cizí program, který vám databázi vyčistí na základě svých generických pravidel.</p></div>
 
 Tyto čističe zaručují zrychlení registru. Pokud bychom měli prohledat celý registr, chvíli to zabere &ndash; nic takového ovšem aplikace nedělají. Aplikace se obracejí do specifických oblastí registru, kde očekávají nějaké své nastavení, případně chtějí manipulovat s COM objekty &ndash; tuto operaci mohou provést během několika milisekund.
 
@@ -24,7 +26,8 @@ Z toho vyplývá, že žádné zrychlení ve většině případu nenastane. Pok
 
 Celé čištění/optimalizování registru je tedy z technického hlediska založeno pouze na tzv. [placebo efektu](https://cs.wikipedia.org/wiki/Placebo).
 
-![idea](https://mople71.cz/img/sm/idea.gif) Čističe registru hledají chyby v registru na základě svých pravidel. Každá hodnota registru je unikát a může se s jednotlivými OS lišit. <span class="green">Nikdo</span> nemůže tímto způsobem 100% určit, že hodnota je chybná/nepotřebná.
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+Čističe registru hledají chyby v registru na základě svých pravidel. Každá hodnota registru je unikát a může se s jednotlivými OS lišit. ***Nikdo*** nemůže tímto způsobem 100% určit, že hodnota je chybná/nepotřebná.</p></div>
 
 Velmi oblíbená je detekce nepoužívaných klíčů registru. Ne každý nepoužívaný klíč je špatný, právě naopak. Klíč může být opuštěný, jelikož obsahuje hodnoty, které v budoucnu může žádat a potřebovat jiná aplikace.
 
@@ -52,7 +55,8 @@ Jediné funkce, které poskytuje navíc oproti OS jsou analýza disku, vyhledán
 
 Stojí to za instalaci nedůvěryhodné aplikace třetí strany, která přichází ve free verzi s foistware a je potenciálně nebezpečná pro OS?
 
-![arrow](https://mople71.cz/img/sm/arrow.gif) Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi a nepoužívat část čistící registr.
+<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> <strong>Tip</strong><br>
+Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi a nepoužívat část čistící registr.</p></div>
 
 <br><br><hr><br>
 
@@ -60,9 +64,10 @@ Stojí to za instalaci nedůvěryhodné aplikace třetí strany, která přichá
 
 K bezpečné údržbě vašeho OS používejte vestavěné nástroje Windows.
 
-<h3 class="nocol">![cleanmgr](https://mople71.cz/img/icons/cleanmgr.png) Disk Space Cleanup Manager</h3>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+Následující postup je vhodné provádět 1x za měsíc.</p></div>
 
-![idea](https://mople71.cz/img/sm/idea.gif) Následující postup je vhodné provádět 1x za měsíc.
+<h3 class="nocol">![cleanmgr](https://mople71.cz/img/icons/cleanmgr.png) Disk Space Cleanup Manager</h3>
 
 - Otevřete si **hledání Windows**, do vyhledávacího pole zadejte:
 <li style="list-style-type: none"><pre><code>cleanmgr</code></pre></li>
@@ -73,9 +78,10 @@ K bezpečné údržbě vašeho OS používejte vestavěné nástroje Windows.
 
 <br>
 
-<h3 class="nocol">![cmd](https://mople71.cz/img/icons/cmd.png) Čištění TEMP</h3>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+Následující postup je vhodné provádět 1x týdně.</p></div>
 
-![idea](https://mople71.cz/img/sm/idea.gif) Následující postup je vhodné provádět 1x týdně.
+<h3 class="nocol">![cmd](https://mople71.cz/img/icons/cmd.png) Čištění TEMP</h3>
 
 - Stiskněte kláv. zkratku <img src="https://mople71.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell (správce)</span>.
 <li style="list-style-type: none">![wx](https://guide.mople71.cz/img/cs/wx.png)</li>
@@ -125,11 +131,12 @@ a stiskněte **Enter**.</li>
 - Klikněte na tlačítko <span class="green">OK</span>.
 - Plánovač úloh zavřete.
 
-![arrow](https://mople71.cz/img/sm/arrow.gif) Tímto jste nastavili automatické mazání zbytečných souborů, které se spustí 1x za 14 dní. Dále se již o nic nemusíte starat.
+<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> <strong>Úspěch</strong><br>
+Tímto jste nastavili automatické mazání zbytečných souborů, které se spustí jednou za 14 dní. Dále se již o&nbsp;nic nemusíte starat.</p></div>
 
 <br>
 
-#### Rozebrání funkcí a činností skriptu:
+### Rozebrání funkcí a činností skriptu:
 
 > Funkce skriptu Duster:
 
@@ -149,10 +156,6 @@ a stiskněte **Enter**.</li>
 - maže dočasné soubory
 - spouští nástroj Čištění disku
 
-<br>
-
-![question](https://mople71.cz/img/sm/question.gif) Máte pomalý počítač? Příčinou může být malware, v takovém případě směřujte spíše do následující sekce: https://forum.zive.cz/forum-927/Viry-a-bezpecnost.html
-
 <br><br><hr>
 
-<span class="green">Hezký den.</span> ![smile](https://mople71.cz/img/sm/smile.gif)
+<h3 class="nocol">Hezký den. ![smile](https://mople71.cz/img/sm/smile.gif)</h3>
