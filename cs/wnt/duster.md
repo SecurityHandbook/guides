@@ -4,7 +4,7 @@
 
 Čističe OS čistící registry jsou pro OS nebezpečné, nedoporučované a Microsoftem nepodporované.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
 Přečtěte si prosím zásady podpory Microsoftu: <a href="https://support.microsoft.com/cs-cz/kb/2563254">https://support.microsoft.com/cs-cz/kb/2563254</a></p></div>
 
 ### Rizika užívání čističů registru:
@@ -17,7 +17,7 @@ Přečtěte si prosím zásady podpory Microsoftu: <a href="https://support.micr
 
 Spousta problémů s OS, se kterými se denně potkávám na různých fórech, je způsobena právě čističi registru, defragmentátory registru, optimizéry registru apod.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
 Registr je velká hierarchická databáze obsahující miliony hodnot, které určují chod OS. Máte-li nějakou databázi, také do ní nevpustíte naprosto cizí program, který vám databázi vyčistí na základě svých generických pravidel.</p></div>
 
 Tyto čističe zaručují zrychlení registru. Pokud bychom měli prohledat celý registr, chvíli to zabere &ndash; nic takového ovšem aplikace nedělají. Aplikace se obracejí do specifických oblastí registru, kde očekávají nějaké své nastavení, případně chtějí manipulovat s COM objekty &ndash; tuto operaci mohou provést během několika milisekund.
@@ -55,7 +55,7 @@ Jediné funkce, které poskytuje navíc oproti OS jsou analýza disku, vyhledán
 
 Stojí to za instalaci nedůvěryhodné aplikace třetí strany, která přichází ve free verzi s foistware a je potenciálně nebezpečná pro OS?
 
-<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> <strong>Tip</strong><br>
+<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> **Tip**<br>
 Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi a nepoužívat část čistící registr.</p></div>
 
 <br><br><hr><br>
@@ -64,7 +64,7 @@ Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi 
 
 K bezpečné údržbě vašeho OS používejte vestavěné nástroje Windows.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
 Následující postup je vhodné provádět 1x za měsíc.</p></div>
 
 <h3 class="nocol">![cleanmgr](https://mople71.cz/img/icons/cleanmgr.png) Disk Space Cleanup Manager</h3>
@@ -78,7 +78,7 @@ Následující postup je vhodné provádět 1x za měsíc.</p></div>
 
 <br>
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> <strong>Info</strong><br>
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
 Následující postup je vhodné provádět 1x týdně.</p></div>
 
 <h3 class="nocol">![cmd](https://mople71.cz/img/icons/cmd.png) Čištění TEMP</h3>
@@ -131,7 +131,7 @@ a stiskněte **Enter**.</li>
 - Klikněte na tlačítko <span class="green">OK</span>.
 - Plánovač úloh zavřete.
 
-<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> <strong>Úspěch</strong><br>
+<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> **Úspěch**<br>
 Tímto jste nastavili automatické mazání zbytečných souborů, které se spustí jednou za 14 dní. Dále se již o&nbsp;nic nemusíte starat.</p></div>
 
 <br>

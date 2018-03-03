@@ -6,7 +6,9 @@ Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. B
 
 ## Stažení originálního ISO Windows 8.1:
 
-![arrow](https://mople71.cz/img/sm/arrow.gif) Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.microsoft.com/cs-cz/software-download/windows8ISO
+Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.microsoft.com/cs-cz/software-download/windows8ISO
+
+<br>
 
 ## Vytvoření instalačního média Windows 8.1:
 
@@ -24,9 +26,8 @@ Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. B
 
 Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je rozumné před instalací kompletně vyčistit disk. Tento postup je také standardem při instalaci na nový disk.
 
-![exclaim](https://mople71.cz/img/sm/exclaim.gif) <span class="red">Vyčištění disku smaže veškerá existující data na příslušném disku!</span>
-
-![exclaim](https://mople71.cz/img/sm/exclaim.gif) **Pouze pro pokročilé!**
+<div class="alert exclaim"><p><img src="https://mople71.cz/img/exclaim.png" alt="exclaim"> **Varování**<br>
+Vyčištění disku smaže veškerá existující data na příslušném disku! **Pouze pro pokročilé!**</p></div>
 
 > Návod
 
