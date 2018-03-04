@@ -56,7 +56,7 @@ Nejspolehlivější jsou z hlediska bezpečnostních aktualizací telefony pří
 
 Příklad *Google* následuje výrobce **<span class="no">Nokia</span>**, který se zavázal pro veškeré své modely poskytovat měsíční bezpečnostní aktualizace a vydávání aktualizací garantuje po 2 roky od uvedení modelu. Stejně na tom je výrobce **Essential**.
 
-Pravidelné měsíční bezpečnostní aktualizace dále dostávají vyšší modely značky **<span class="sam">Samsung</span>** (přehled aktualizací [zde](http://security.samsungmobile.com/smrupdate.html)) a vlajkové lodě značky **<span class="lg">LG</span>** (přehled aktualizací [zde](https://lgsecurity.lge.com/security_updates.html)). Tito výrobci ovšem nijak nedeklarovali délku podpory zařízení v podobě bezpečnostních aktualizací, v průměru se jedná o 2 roky.
+Pravidelné měsíční bezpečnostní aktualizace dále dostávají vyšší modely značky **<span class="sam">Samsung</span>** (přehled aktualizací [zde](https://security.samsungmobile.com/workScope.smsb)) a vlajkové lodě značky **<span class="lg">LG</span>** (přehled aktualizací [zde](https://lgsecurity.lge.com/security_updates.html)). Tito výrobci ovšem nijak nedeklarovali délku podpory zařízení v podobě bezpečnostních aktualizací, v průměru se jedná o 2 roky.
 
 Výrobce **SONY** odvádí velmi slušnou práci v podpoře svých modelů co se SW týče. Jako jeden z prvních nabízí aktualizace verze OS a pro své vyšší modely vydává časté bezpečnostní aktualizace, podpora jednotlivých modelů je v průměru 1,5 roku.
 
