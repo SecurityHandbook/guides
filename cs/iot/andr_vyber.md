@@ -9,7 +9,7 @@ Prvním kritériem výběru telefonu by měl být výrobce. Na trhu působí vý
 
 Uživatelé by se měli obloukem vyhnout neznámým (obvykle čínským) výrobcům, jelikož telefony sice mohou být levné a dobře vybavené, často ovšem také obsahují předinstalovaný malware. Používat ověřené značky se známou minulostí na trhu je rozumnější volbou.
 
-Ze známějších značek by se uživatelé měli vyvarovat výrobci **<span class="mi">Xiaomi</span>**, jehož modely prokazatelně obsahují *backdoor*, který v lepším případě odesílá telemetrická data bez uživatelova svolení/vědomí. Stejně tak by se uživatelé měli vyvarovat výrobci **<span class="le">Lenovo</span>**, jehož některé modely prokazatelně měly předinstalovaný malware v OS. Další nedůvěryhodné značky z hlediska bezpečnosti jsou **Aligator**, **Alcatel**, **Meizu**, **ZTE**, **Prestigio**, **Leagoo**, **Zopo**, **Doogee**, **Ulefone**, **BLU** a mnohé další.
+Ze známějších značek by se uživatelé měli vyvarovat **<span class="mi">Xiaomi</span>**, jehož modely prokazatelně obsahují *backdoor*, který v lepším případě odesílá telemetrická data bez uživatelova svolení/vědomí. Stejně tak by se uživatelé měli vyvarovat výrobci **<span class="le">Lenovo</span>**, jehož některé modely prokazatelně měly předinstalovaný malware v OS. Další nedůvěryhodné značky z hlediska bezpečnosti jsou **Aligator**, **Alcatel**, **Meizu**, **ZTE**, **Prestigio**, **Leagoo**, **Zopo**, **Doogee**, **Ulefone**, **BLU**,...
 
 <br>
 
@@ -78,6 +78,9 @@ Pouze o výše uvedených modelech má smysl dále se bavit, jelikož modely obs
 - *Essential Phone*
 - vlajkové lodě výrobců **<span class="sam">Samsung</span>**, **<span class="lg">LG</span>**, **<span class="hu">Huawei</span>** a **SONY**
 - vyšší modely výrobců **<span class="sam">Samsung</span>** a **SONY**
+
+<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Tip**<br>
+Pro inspiraci se také můžete podívat na [seznam doporučených modelů pro firemní sféru](https://androidenterprisepartners.withgoogle.com/#!/results/browse-all/2) od Google.</p></div>
 
 <br><br><hr><br>
 
