@@ -15,7 +15,7 @@ Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vy
 <li style="list-style-type: none"><pre><code>lsblk</code></pre></li>
 - Následně jej odpojte &ndash; s největší pravděpodobností byl automaticky připojen. (<span class="red">x</span> vždy nahraďte příslušným písmenem)
 <li style="list-style-type: none"><pre><code>sudo umount /dev/sdx</code></pre></li>
-- Vybalte na něj instalační soubory *Arch Linux*.
+- Rozbalte na něj instalační soubory *Arch Linux*.
 <li style="list-style-type: none"><pre><code>sudo dd bs=4M if=/cesta/k/archlinux-<verze>-x86_64.iso of=/dev/sdx status=progress && sync</code></pre></li>
 
 <br><br><hr><br>
@@ -115,7 +115,7 @@ cat /mnt/etc/fstab</code></pre></li>
 <br><br><hr><br>
 
 ## Konfigurace
-Gratuluji, prošli jste nejtěžší částí návodu. ![smile](https://mople71.cz/img/sm/smile.gif)
+Gratuluji, to nejhorší již máte za sebou. ![smile](https://mople71.cz/img/sm/smile.gif)
 
 - Přepněte se do nového OS.
 <li style="list-style-type: none"><pre><code>arch-chroot /mnt</code></pre></li>
@@ -124,7 +124,7 @@ Gratuluji, prošli jste nejtěžší částí návodu. ![smile](https://mople71.
 hwclock --systohc</code></pre></li>
 - Nastavte lokalizaci (jazyk) OS. Chcete-li češtinu, v seznamu nalezněte řádek <span class="red">#cs_CZ.UTF-8</span> a odstraňte mřížku na jeho začátku.
 <li style="list-style-type: none"><pre><code>nano /etc/locale.gen</code></pre></li>
-- Vytvořte lokalizaci a určete jako výchozí:
+- Vytvořte lokalizaci a určete ji jako výchozí:
 <li style="list-style-type: none"><pre><code>locale-gen
 echo LANG=cs_CZ.UTF-8 > /etc/locale.conf</code></pre></li>
 - Nastavte název svého OS v síti (např. *arch*):
@@ -149,7 +149,8 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <li style="list-style-type: none"><pre><code>EDITOR=nano visudo</code></pre></li>
 - Sjeďte na konec souboru, nalezněte řádek <span class="red">#%wheel ALL=(ALL) ALL</span> a odstraňte mřížku na jeho začátku:
 <li style="list-style-type: none"><pre><code>## Uncomment to allow members of group wheel to execute any command
-%wheel ALL=(ALL) ALL</code></pre></li>
+%wheel ALL=(ALL) ALL
+...</code></pre></li>
 
 <br>
 
@@ -163,11 +164,11 @@ S *open-source* ovladačem pro karty **nVidia** si moc dobře náročné hry nez
 
 | Výrobce            | Typ          | Ovladač            | OpenGL       | HW akcelerace                      |
 | ------------------ | ------------ | ------------------ | ------------ | ---------------------------------- |
-| AMD (GCN 3 a výše) | open-source  | xf86-video-amdgpu  | mesa         | mesa-vdpau, libva-vdpau-driver     |
-| AMD (GCN 2 a níže) | open-source  | xf86-video-ati     | mesa         | mesa-vdpau, libva-vdpau-driver     |
-| Intel              | open-source  | xf86-video-intel   | mesa         | libva-intel-driver, libvdpau-va-gl |
-| nVidia             | open-source  | xf86-video-nouveau | mesa         | mesa-vdpau, libva-vdpau-driver     |
-| nVidia             | proprietární | nvidia             | nvidia-utils | nvidia-utils, libva-vdpau-driver   |
+| AMD<br>(GCN 3 a výše) | open-source  | xf86-video-amdgpu  | mesa         | mesa-vdpau,<br>libva-vdpau-driver     |
+| AMD<br>(GCN 2 a níže) | open-source  | xf86-video-ati     | mesa         | mesa-vdpau,<br>libva-vdpau-driver     |
+| Intel              | open-source  | xf86-video-intel   | mesa         | libva-intel-driver,<br>libvdpau-va-gl |
+| nVidia             | open-source  | xf86-video-nouveau | mesa         | mesa-vdpau,<br>libva-vdpau-driver     |
+| nVidia             | proprietární | nvidia             | nvidia-utils | nvidia-utils,<br>libva-vdpau-driver   |
 
 - Potřebné balíčky nainstalujte. Předpokládejme např. nVidia GTX 960:
 <li style="list-style-type: none"><pre><code>## Open-source:
@@ -207,7 +208,14 @@ pacman -S nvidia nvidia-utils libva-vdpau-driver</code></pre></li>
 <li style="list-style-type: none"><pre><code>pacman -S gdm
 pacman -S gnome network-manager-applet</code></pre></li>
 - Z výběru balíčků zvolte následující:
-<li style="list-style-type: none"><pre><code>evince, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters, gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer, gnome-getting-started-docs, gnome-keyring, gnome-menus, gnome-screenshot, gnome-session, gnome-settings-daemon, gnome-shell, gnome-shell-extensions, gnome-system-monitor, gnome-terminal, gnome-themes-extra, gnome-user-docs, gnome-video-effects, gvfs, gvfs-afc, gvfs-goa, gvfs-google, gvfs-gphoto2, gvfs-mtp, gvfs-nfs, mousetweaks, mutter, nautilus, networkmanager, sushi, xdg-user-dirs-gtk, yelp, gnome-boxes, simple-scan</code></pre></li>
+<li style="list-style-type: none"><pre><code>evince, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters,
+gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer,
+gnome-getting-started-docs, gnome-keyring, gnome-menus, gnome-screenshot,
+gnome-session, gnome-settings-daemon, gnome-shell, gnome-shell-extensions,
+gnome-system-monitor, gnome-terminal, gnome-themes-extra, gnome-user-docs,
+gnome-video-effects, gvfs, gvfs-afc, gvfs-goa, gvfs-google, gvfs-gphoto2,
+gvfs-mtp, gvfs-nfs, mousetweaks, mutter, nautilus, networkmanager, sushi,
+xdg-user-dirs-gtk, yelp, gnome-boxes, simple-scan</code></pre></li>
 - Čísla výše zmíněných balíčků (mohou se měnit) zadejte následujícím způsobem a stiskněte **Enter**.
 <li style="list-style-type: none"><pre><code>5,6,8,9,10,12,...,64</code></pre></li>
 - Nastavte spuštění *GNOME* při startu:
@@ -248,7 +256,6 @@ flatpak install flathub org.gnome.eog
 flatpak install flathub org.gnome.Epiphany
 flatpak install flathub org.gnome.Calendar
 flatpak install flathub org.gnome.Weather
-flatpak install flathub org.gnome.Lollypop
 flatpak install flathub org.libreoffice.LibreOffice
 flatpak install flathub com.transmissionbt.Transmission
 flatpak install flathub org.gimp.GIMP
@@ -263,10 +270,12 @@ cd paper-icon-theme-git
 makepkg -sri</code></pre></li>
 - Otevřete si <span class="green">Vylepšení</span> a zvolte **Paper** jako motiv pro ikony.
 
+<br>
+
 ### Zabezpečení:
 - Nastavte */tmp* oddíl jako **noexec**. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
 - Nepoužíváte-li *IPv6*, zakažte jej. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
-- Nastavte *DNSSEC* &ndash; 217.31.204.130,193.29.206.206 &ndash; nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
+- Nastavte *DNSSEC* &ndash; 217.31.204.130,193.29.206.206 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
 - Nastavte **firewall**:
 <li style="list-style-type: none"><pre><code>sudo -i
 iptables -P INPUT   DROP
