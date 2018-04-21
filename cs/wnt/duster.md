@@ -5,7 +5,7 @@
 Čističe OS čistící registry jsou pro OS nebezpečné, nedoporučované a Microsoftem nepodporované.
 
 <div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
-Přečtěte si prosím zásady podpory Microsoftu: <a href="https://support.microsoft.com/cs-cz/kb/2563254">https://support.microsoft.com/cs-cz/kb/2563254</a></p></div>
+Přečtěte si prosím zásady podpory Microsoftu: https://support.microsoft.com/cs-cz/kb/2563254</p></div>
 
 ### Rizika užívání čističů registru:
 - mohou způsobit nevratné škody vašemu registru => OS
