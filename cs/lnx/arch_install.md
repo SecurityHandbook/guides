@@ -1,5 +1,5 @@
 # Instalace Arch Linux
-Postup ke korektní instalaci distribuce *Arch Linux* není vždy v českém jazyce dostupné/aktuální. Jedná se v základě o velmi jednoduchý proces, stačí trocha praxe. Tento návod slouží (zatím) spíše pro osobní použití.
+Aktualizovaný postup ke korektní instalaci distribuce *Arch Linux* není vždy v českém jazyce dostupný. Jedná se v zásadě o jednoduchý proces, každý krok je logický a srozumitelný, navíc při dostatečné praxi zabere pouze cca. 30 minut. Tento návod slouží (zatím) spíše pro osobní použití.
 
 <br>
 

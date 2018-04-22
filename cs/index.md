@@ -11,4 +11,4 @@
 - **OS Android**
   - [Jak vybrat bezpečný telefon s OS Android](https://guide.mople71.cz/cs/iot/andr_vyber.php)
 - **OS Linux**
-  - [Instalace Arch Linux (nedokončeno)](https://guide.mople71.cz/cs/lnx/arch_install.php)
+  - [Instalace Arch Linux](https://guide.mople71.cz/cs/lnx/arch_install.php)
