@@ -90,6 +90,17 @@ Následující postup je vhodné provádět 1x týdně.</p></div>
 a stiskněte **Enter**.</li>
 - Vyčkejte na dokončení požadované akce a aplikaci následně zavřete.
 
+> Čištění TEMP (starší verze Windows)
+
+- Otevřete si nabídku **Start** / **Metro**.
+- Do vyhledávání zadejte:
+<li style="list-style-type: none"><pre><code>cmd</code></pre></li>
+- Na nalezenou položku klikněte pravým tlačítkem a zvolte možnost: ![admin](https://mople71.cz/img/icons/admin.png) **Spustit jako správce**.
+- Do příkazové řádky zadejte následující příkaz:
+<li style="list-style-type: none"><pre><code>del /s /f /q %TEMP%</code></pre>
+a stiskněte **Enter**.</li>
+- Vyčkejte na dokončení požadované akce a aplikaci následně zavřete.
+
 <br><br><hr><br>
 
 ## Automatizace výše uvedených kroků:
