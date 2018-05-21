@@ -2,7 +2,7 @@
 
 Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. Budete potřebovat volné médium (DVD, USB disk) o velikosti alespoň *4 GB* a funkční počítač, ze kterého na něj můžete nahrát instalační soubory Windows.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Tento návod se vztahuje pouze na **OEM** licenci OS. Máte-li retail licenci, je třeba použít jiný postup.<br>Návod naleznete [zde](https://guide.mople71.cz/cs/wnt/w7install.php).</p></div>
 
 <br>
@@ -30,7 +30,7 @@ Torrenty nejsou ideální varianta. Pokud ovšem budete hledat, naleznete na int
 - [64-bit ISO](https://mega.co.nz/#!WVohDDAQ!CG4lRMyTHKK0gUhkc6nyAoNQZ10Zm8IifyblXgxdgxY)
 - [32-bit ISO](https://mega.co.nz/#!OBhDlBxD!i8tgReL7wsxi_SzCuJ5x4NNY7YZPvE2TYpBdLwzM1Vo)
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Výše zmíněné ISO soubory byly podrobeny auditu a jsou v pořádku. Mají neznámé SHA-1, jelikož jsou upraveny, aby umožnily instalaci libovolné edice OS.</p></div>
 
 <br>
@@ -51,7 +51,7 @@ Výše zmíněné ISO soubory byly podrobeny auditu a jsou v pořádku. Mají ne
 
 Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je rozumné před instalací kompletně vyčistit disk. Tento postup je také standardem při instalaci na nový disk.
 
-<div class="alert exclaim"><p><img src="https://mople71.cz/img/exclaim.png" alt="exclaim"> **Varování**<br>
+<div class="alert exclaim"><p><em class="icon-attention"></em>**Varování**<br>
 Vyčištění disku smaže veškerá existující data na příslušném disku! **Pouze pro pokročilé!**</p></div>
 
 > Návod
@@ -91,7 +91,7 @@ Neprošel-li samotný klíč aktivací, využijte jeden ze způsobů aktivace n�
 
 > Aktivace po telefonu
 
-<div class="alert exclaim"><p><img src="https://mople71.cz/img/exclaim.png" alt="exclaim"> **Varování**<br>
+<div class="alert exclaim"><p><em class="icon-attention"></em>**Varování**<br>
 Odkaz níže odkazuje na webovou stránku třetí strany.</p></div>
 
 Návod zde: http://www.servispckupka.cz/jak_aktivovat_windows_7_aktivace_po_telefonu.php
@@ -101,7 +101,7 @@ Návod zde: http://www.servispckupka.cz/jak_aktivovat_windows_7_aktivace_po_tele
 ## Instalace aktualizací Windows 7:
 Pro korektní fungování *Windows Update* je nutné dodržet následující postup instalace chybějících aktualizací OS. V opačném případě se později mohou vyskytnout problémy. Aktualizace ručně stáhneme a nainstalujeme, čímž si proces instalace aktualizací zkrátíme o cca. **10 hodin**.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Nejjednodušší je při instalaci OS nenastavovat *Windows Update*. Pokud jste službu při instalaci již nastavili, dočasně vyhledávání aktualizací v nastavení vypněte. Nevíte-li jak otevřít a změnit nastavení *Windows Update*, nápověda [zde](https://faq.mople71.cz/cs/wnt/index.php#wnt1.2).</p></div>
 
 Postup se liší v závislosti na bitové verzi OS.
@@ -140,4 +140,4 @@ Postup se liší v závislosti na bitové verzi OS.
 
 <br><br><hr>
 
-<span class="green">Hezký den.</span> ![smile](https://mople71.cz/img/sm/smile.gif)
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

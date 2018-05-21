@@ -25,7 +25,7 @@ Každá verze OS Android přináší mnohá bezpečnostní a jiná vylepšení. 
 **Oreo** posunul sandboxing na mnohonásobně vyšší úroveň díky *Project Treble*, zároveň přinesl celoplošené využítí *seccomp* pro veškeré aplikace. Také výrazně zvýšil bezpečnost *WebView*, zrobustnil model oprávnění aplikací atd.
 
 ![Treble case study: media stack](https://guide.mople71.cz/img/en/mstreble.png)
-<p class="imgsrcf">*Treble case study: media stack (upraveno).* Zdroj: [What's New in Android Security (Google I/O '17)](https://www.youtube.com/watch?v=C9_ytg6MUP0)</p>
+<p class="imgsrcf">*Treble case study: media stack (upraveno).* Zdroj: [What's New in Android Security (Google I/O '17)](https://www.youtube.com/watch?v=C9_ytg6MUP0) | &#169; 2017 Google</p>
 
 Drobný příklad. Nainstalujete škodlivou aplikaci na *Android 5.0* &ndash; nemáte kontrolu nad oprávněními aplikace, aplikace si může dělat, co chce. Nainstalujete škodlivou aplikaci na *Android 8.1* &ndash; aplikaci můžete odebrat oprávnění, která nechcete. Už se tedy nestane, aby aplikace na svítilnu měla přístup k vašim datům, mikrofonu a videu.
 
@@ -79,7 +79,7 @@ Pouze o výše uvedených modelech má smysl dále se bavit, jelikož modely obs
 - vlajkové lodě výrobců **<span class="sam">Samsung</span>**, **<span class="lg">LG</span>**, **<span class="hu">Huawei</span>** a **SONY**
 - vyšší modely výrobců **<span class="sam">Samsung</span>** a **SONY**
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Tip**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Tip**<br>
 Pro inspiraci se také můžete podívat na [seznam doporučených modelů pro firemní sféru](https://androidenterprisepartners.withgoogle.com/#!/results/browse-all/2) od Google.</p></div>
 
 <br><br><hr><br>
@@ -102,7 +102,7 @@ Na LTS kernelu (**3.18**) jsou zaseknutá novější zařízení s Qualcomm/MTK 
 Starší zařízení s OS Android běží na EOL kernelech (**3.10** a starší), např. *<span class="go">Google</span> Nexus* atd. Toto již představuje problém, jelikož zatímco na LTS *3.18* kernel Google backportuje bezpečnostní funkce kvůli svému modelu Pixel, backport těchto funkcí na EOL verze kernelu již neprovádí. Zařízení s kernelem *3.10* tedy nemají důležité bezpečnostní funkce jako **PAN emulation**, **hardened-usercopy**. Např. **hardened-usercopy** likviduje cca. *45* % kernel exploitů a proto z tohoto pohledu zařízení běžící na *3.10* nemohou být považována za bezpečná. O starších zařízeních se nemá smysl ani bavit.
 
 ![Druhy zranitelností Android kernelu](https://guide.mople71.cz/img/en/kbugs.png)
-<p class="imgsrcf">*What causes kernel bugs? (upraveno)* Zdroj: [What's New in Android Security (Google I/O '17)](https://www.youtube.com/watch?v=C9_ytg6MUP0)</p>
+<p class="imgsrcf">*What causes kernel bugs? (upraveno)* Zdroj: [What's New in Android Security (Google I/O '17)](https://www.youtube.com/watch?v=C9_ytg6MUP0) | &#169; 2017 Google</p>
 
 Výrobce **Blackberry** rád prohlašuje, že je nejbezpečnější na trhu a uvádí důvody jako &bdquo;**kernel hardening**&ldquo;. Všechny modely Blackberry kromě modelu *KEYone* běží na LTS **3.10** kernelu, takže o nějaké bezpečnosti se v tomto smyslu nedá bavit. A co se týče *&bdquo;kernel hardening&ldquo;*, v podání Blackberry se jedná o několik málo mitigací převzatých z prehistorických *grsecurity* patchů, jde tedy pouze o marketing, z určitého pohledu dokonce o klamavou reklamu. Nemluvě o přístupu výrobce k aktualizacím svých modelů, který je tristní.
 
@@ -115,4 +115,4 @@ Zařízení s Android **Nougat** a výše mohou podporovat striktní *verified b
 
 <br><br><hr>
 
-<h3 class="nocol">To je vše. Stay safe! ![smile](https://mople71.cz/img/sm/smile.gif)</h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

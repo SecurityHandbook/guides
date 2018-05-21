@@ -2,7 +2,7 @@
 
 Pokud nemáte k dispozici instalační DVD, můžete jej jednoduše vytvořit. Budete potřebovat volné médium (DVD, USB disk) o velikosti alespoň *4 GB* a funkční počítač, ze kterého na něj můžete nahrát instalační soubory Windows.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Tento návod se vztahuje pouze na **retail** licenci OS. Máte-li OEM licenci, je třeba použít jiný postup.<br>Návod naleznete [zde](https://guide.mople71.cz/cs/wnt/w7oeminstall.php).</p></div>
 
 <br>
@@ -29,7 +29,7 @@ Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.m
 
 Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je rozumné před instalací kompletně vyčistit disk. Tento postup je také standardem při instalaci na nový disk.
 
-<div class="alert exclaim"><p><img src="https://mople71.cz/img/exclaim.png" alt="exclaim"> **Varování**<br>
+<div class="alert exclaim"><p><em class="icon-attention"></em>**Varování**<br>
 Vyčištění disku smaže veškerá existující data na příslušném disku! **Pouze pro pokročilé!**</p></div>
 
 > Návod
@@ -52,7 +52,7 @@ exit</code></pre></li>
 ## Instalace aktualizací Windows 7:
 Pro korektní fungování *Windows Update* je nutné dodržet následující postup instalace chybějících aktualizací OS. V opačném případě se později mohou vyskytnout problémy. Aktualizace ručně stáhneme a nainstalujeme, čímž si proces instalace aktualizací zkrátíme o cca. **10 hodin**.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Nejjednodušší je při instalaci OS nenastavovat *Windows Update*. Pokud jste službu při instalaci již nastavili, dočasně vyhledávání aktualizací v nastavení vypněte. Nevíte-li jak otevřít a změnit nastavení *Windows Update*, nápověda [zde](https://faq.mople71.cz/cs/wnt/index.php#wnt1.2).</p></div>
 
 Postup se liší v závislosti na bitové verzi OS.
@@ -91,4 +91,4 @@ Postup se liší v závislosti na bitové verzi OS.
 
 <br><br><hr>
 
-<span class="green">Hezký den.</span> ![smile](https://mople71.cz/img/sm/smile.gif)
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

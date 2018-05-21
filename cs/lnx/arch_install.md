@@ -159,7 +159,7 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <li style="list-style-type: none"><pre><code>lspci | grep -e VGA -e 3D</code></pre></li>
 - Následně dle tabulky vyberte vhodný ovladač.
 
-<div class="alert info"><p><img src="https://mople71.cz/img/info.png" alt="info"> **Info**<br>
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 S *open-source* ovladačem pro karty **nVidia** si moc dobře náročné hry nezahrajete. V případě herního zaměření možná bude nezbytné použít proprietární ovladače.</p></div>
 
 | Výrobce            | Typ          | Ovladač            | OpenGL       | HW akcelerace                      |
@@ -306,7 +306,7 @@ systemctl enable iptables</code></pre></li>
 - Bezpečně nastavte prohlížeč(e). Návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx4).
 - Restartujte OS.
 
-<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> **Úspěch**<br>
+<div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
 Tímto jste nainstalovali a bezpečně nakonfigurovali Arch Linux.</p></div>
 
 <br><br><hr><br>
@@ -318,4 +318,4 @@ Tímto jste nainstalovali a bezpečně nakonfigurovali Arch Linux.</p></div>
 
 <br><br><hr>
 
-<h3 class="nocol">Hezký den. ![smile](https://mople71.cz/img/sm/smile.gif)</h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

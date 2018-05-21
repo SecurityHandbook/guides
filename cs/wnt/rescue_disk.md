@@ -23,7 +23,7 @@ Pokud selže odstranění malware přes OS, případně nelze OS ani zavést, je
 - Jakmile budou zneškodněny všechny nalezené hrozby, klikněte na <span class="green">Finish</span> a následně <span class="green">Done</span>.
 - Restartujte zařízení.
 
-<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> **Úspěch**<br>
+<div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
 Váš OS by měl nyní být zbaven aktivního malware a schopný zavedení. Pokud ne, můžete zkusit ještě možnost uvedenou níže.</p></div>
 
 <br><br><hr><br>
@@ -53,9 +53,9 @@ Váš OS by měl nyní být zbaven aktivního malware a schopný zavedení. Poku
 - Postup opakujte pro všechny druhy nalezených hrozeb.
 - Aplikaci zavřete a restartujte zařízení.
 
-<div class="alert success"><p><img src="https://mople71.cz/img/success.png" alt="success"> **Úspěch**<br>
+<div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
 Váš OS by měl nyní být zbaven aktivního malware a schopný zavedení.</p></div>
 
 <br><br><hr>
 
-<h3 class="nocol">Hezký den. ![smile](https://mople71.cz/img/sm/smile.gif)</h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

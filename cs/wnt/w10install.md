@@ -26,7 +26,7 @@ Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.m
 
 Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je rozumné před instalací kompletně vyčistit disk. Tento postup je také standardem při instalaci na nový disk.
 
-<div class="alert exclaim"><p><img src="https://mople71.cz/img/exclaim.png" alt="exclaim"> **Varování**<br>
+<div class="alert exclaim"><p><em class="icon-attention"></em>**Varování**<br>
 Vyčištění disku smaže veškerá existující data na příslušném disku! **Pouze pro pokročilé!**</p></div>
 
 > Návod
@@ -46,4 +46,4 @@ exit</code></pre></li>
 
 <br><br><hr>
 
-<span class="green">Hezký den.</span> ![smile](https://mople71.cz/img/sm/smile.gif)
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>

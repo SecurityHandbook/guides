@@ -16,6 +16,7 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 
 ## Produktivita:
 - [Chromium](https://chromium.googlesource.com/chromium/src/+/master/docs/android_build_instructions.md) &ndash; prohlížeč
+- [Brave](https://play.google.com/store/apps/details?id=com.brave.browser&hl=cs) &ndash; prohlížeč
 - [Etar](https://github.com/Etar-Group/Etar-Calendar) &ndash; kalendář
 - [OctoDroid](https://github.com/slapperwan/gh4a) &ndash; klient pro GitHub
 - [OpenTasks](https://github.com/dmfs/opentasks) &ndash; úkoly
@@ -59,3 +60,7 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 - [1010! Klooni](https://lonamiwebs.github.io/klooni/)
 - [Sudoku](https://github.com/SecUSo/privacy-friendly-sudoku)
 - 2048
+
+<br><br><hr>
+
+<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>
