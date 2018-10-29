@@ -9,6 +9,7 @@
 - [Čistá instalace Windows 8.1](https://guide.mople71.cz/cs/wnt/w8install.php)
 - [Čistá instalace Windows 7](https://guide.mople71.cz/cs/wnt/w7install.php)
 - [Čistá instalace Windows 7 na stroji s OEM licencí](https://guide.mople71.cz/cs/wnt/w7oeminstall.php)
+- [Vytvoření instalačního média z ISO souboru pomocí aplikace Rufus](https://guide.mople71.cz/cs/wnt/rufus.php)
 
 <br>
 

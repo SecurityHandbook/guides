@@ -12,7 +12,7 @@ Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.m
 
 ## Vytvoření instalačního média Windows 8.1:
 
-- Vytvořte instalační médium z ISO souboru, pro USB doporučím program [Rufus](https://rufus.akeo.ie/) (návod [zde](http://www.cnews.cz/navody/rufus-vytvorte-zavadeci-flash-disk-s-nejrychlejsim-nastrojem-ze-vsech)).
+- Vytvořte instalační médium z ISO souboru, pro USB doporučím program [Rufus](https://rufus.ie/) (návod [zde](https://guide.mople71.cz/cs/wnt/rufus.php)).
 - Nabootujte z vytvořeného instalačního média.
 - Zkontrolujte konfiguraci jazyka a klávesnice a klikněte na tlačítko <span class="green">Další</span>.
 - Klikněte na tlačítko <span class="green">Nainstalovat</span>.
