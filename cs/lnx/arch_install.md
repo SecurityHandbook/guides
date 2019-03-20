@@ -51,13 +51,13 @@ Pro stroje z roku 2014 a novější pravděpodobně bude jednat o GPT. U starš�
 - Vytvořte ESP oddíl:
 <li style="list-style-type: none"><pre><code>mkpart ESP fat32 1MiB 513MiB
 set 1 boot on</code></pre></li>
-- Vytvořte systémový oddíl o velikosti 50 GB:
+- Vytvořte systémový oddíl o velikosti 50 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 513MiB 50.5</code></pre></li>
-- Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GB):
+- Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GiB):
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 50.5 550.5</code></pre></li>
-- Vytvořte oddíl na dočasné soubory o velikosti 2 GB:
+- Vytvořte oddíl na dočasné soubory o velikosti 2 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 550.5 552.5</code></pre></li>
-- Vytvořte swap oddíl o velikosti 2 GB:
+- Vytvořte swap oddíl o velikosti 2 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary linux-swap 552.5 554.5</code></pre></li>
 - Oddíly zkontrolujte a editor ukončete:
 <li style="list-style-type: none"><pre><code>print
@@ -67,13 +67,13 @@ quit</code></pre></li>
 
 - Odstraňte předchozí záznamy o diskových oddílech.
 <li style="list-style-type: none"><pre><code>mklabel msdos</code></pre></li>
-- Vytvořte systémový oddíl o velikosti 50 GB:
+- Vytvořte systémový oddíl o velikosti 50 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 1MiB 50</code></pre></li>
-- Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GB):
+- Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GiB):
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 50 550</code></pre></li>
-- Vytvořte oddíl na dočasné soubory o velikosti 2 GB:
+- Vytvořte oddíl na dočasné soubory o velikosti 2 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 550 552</code></pre></li>
-- Vytvořte swap oddíl o velikosti 2 GB:
+- Vytvořte swap oddíl o velikosti 2 GiB:
 <li style="list-style-type: none"><pre><code>mkpart primary linux-swap 552 554</code></pre></li>
 - Oddíly zkontrolujte a editor ukončete:
 <li style="list-style-type: none"><pre><code>print
@@ -127,8 +127,7 @@ Server = https://pkg.adfinis-sygroup.ch/archlinux/$repo/os/$arch
 ## Iceland
 Server = https://mirror.system.is/arch/$repo/os/$arch
 ## Switzerland
-Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch
-</code></pre></li>
+Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch</code></pre></li>
 - Vytvořte OS:
 <li style="list-style-type: none"><pre><code>pacstrap /mnt base base-devel</code></pre></li>
 - Po dokončení vytvořte *fstab* pro nový OS. Následně jej zkontrolujte.
@@ -192,7 +191,7 @@ S *open-source* ovladačem pro karty **nVidia** si moc dobře náročné hry nez
 | nVidia             | open-source  | xf86-video-nouveau | mesa         | mesa-vdpau,<br>libva-vdpau-driver     |
 | nVidia             | proprietární | nvidia             | nvidia-utils | nvidia-utils,<br>libva-vdpau-driver   |
 
-- Potřebné balíčky nainstalujte.
+- Potřebné balíčky nainstalujte. Pár příkladů níže:
 <li style="list-style-type: none"><pre><code>## NVIDIA open-source:
 pacman -S xf86-video-nouveau mesa mesa-vdpau libva-vdpau-driver
 
@@ -215,7 +214,7 @@ pacman -S xf86-video-intel mesa libva-intel-driver</code></pre></li>
 - Nainstalujte si **acpi-call**.
 <li style="list-style-type: none"><pre><code>pacman -S acpi_call</code></pre></li>
 
-> Virtuální OS přes GNOME boxes
+> Virtuální OS přes GNOME Boxes
 
 - Nainstalujte si grafický ovladač **qxl** a **spice-vdagent**.
 <li style="list-style-type: none"><pre><code>pacman -S xf86-video-qxl spice-vdagent
@@ -313,18 +312,6 @@ iptables -A drop_invalid -j LOG --log-level debug --log-prefix "INVALID state --
 iptables -A drop_invalid -j DROP
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
-iptables -N In_RULE_1
-iptables -A INPUT -p udp -m udp -j In_RULE_1
-iptables -A In_RULE_1 -j LOG --log-level info --log-prefix "UDP -- DENY "
-iptables -A In_RULE_1 -j DROP
-iptables -N In_RULE_2
-iptables -A INPUT -p tcp -m tcp -j In_RULE_2
-iptables -A In_RULE_2 -j LOG  --log-level info --log-prefix "TCP -- DENY "
-iptables -A In_RULE_2 -j DROP
-iptables -N In_RULE_3
-iptables -A INPUT -j In_RULE_3
-iptables -A In_RULE_3 -j LOG --log-level info --log-prefix "XXX -- DENY "
-iptables -A In_RULE_3 -j DROP
 iptables-save > /etc/iptables/iptables.rules
 systemctl enable iptables</code></pre></li>
 - Na citlivé záležitosti jako bankovnictví používejte prohlížeč **GNOME Web**. Chcete-li na internetu provádět i jiné činnosti, nainstalujte si **Chromium**.
