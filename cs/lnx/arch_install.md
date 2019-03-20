@@ -22,23 +22,27 @@ Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vy
 
 ## Příprava na instalaci
 - Nabootujte live OS. V průběhu instalace budete používat americké rozložení klávesnice, máte jej popsané na levé straně kláves vaší fyzické klávesnice.
+- Používáte-li WiFi připojení, nejprve se připojte k vaší síti:
+<li style="list-style-type: none"><pre><code>wifi-menu</code></pre></li>
 - Ověřte připojení k internetu:
 <li style="list-style-type: none"><pre><code>ping -c3 8.8.8.8</code></pre></li>
-- Pokud používáte WiFi připojení, musíte se nejprve připojit k vaší síti:
-<li style="list-style-type: none"><pre><code>wifi-menu</code></pre></li>
 - Aktualizujte datum a čas:
 <li style="list-style-type: none"><pre><code>timedatectl set-ntp true</code></pre></li>
 
 <br>
 
 ### Rozdělení disku:
-- Nyní přichází k nejpracnější část návodu. Nejprve zjistěte název požadovaného disku:
+- Zjistěte název a aktuální stav požadovaného disku:
 <li style="list-style-type: none"><pre><code>lsblk</code></pre></li>
 - Jakmile identifikujete váš disk, otevřete jej v aplikaci <span class="green">parted</span>. (<span class="red">x</span> vždy nahraďte příslušným písmenem)
 <li style="list-style-type: none"><pre><code>parted /dev/sdx</code></pre></li>
-- Otevře se správa disku. Nejprve korektně nastavte výchozí jednotku a následně vypište aktuální stav disku.
+- Otevře se správa disku. Nastavte *GiB* jako výchozí jednotku a následně vypište aktuální stav disku.
 <li style="list-style-type: none"><pre><code>unit GiB
 print</code></pre></li>
+- Před vytvořením nové tabulky oddílů určtete požadovaný typ rozdělení disku: **GPT** či **MBR**.
+
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
+Pro stroje z roku 2014 a novější pravděpodobně bude jednat o GPT. U starších přístrojů a většiny virtuálních prostředí ve výchozím nastavení se bude jednat o MBR. Kroky níže jsou optimalizovány pro GPT schéma.</p></div>
 
 > Přepsání celého disku a vymezení určité části pro Arch (1 disk GPT)
 
@@ -55,6 +59,22 @@ set 1 boot on</code></pre></li>
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 550.5 552.5</code></pre></li>
 - Vytvořte swap oddíl o velikosti 2 GB:
 <li style="list-style-type: none"><pre><code>mkpart primary linux-swap 552.5 554.5</code></pre></li>
+- Oddíly zkontrolujte a editor ukončete:
+<li style="list-style-type: none"><pre><code>print
+quit</code></pre></li>
+
+> Přepsání celého disku a vymezení určité části pro Arch (1 disk MBR)
+
+- Odstraňte předchozí záznamy o diskových oddílech.
+<li style="list-style-type: none"><pre><code>mklabel msdos</code></pre></li>
+- Vytvořte systémový oddíl o velikosti 50 GB:
+<li style="list-style-type: none"><pre><code>mkpart primary btrfs 1MiB 50</code></pre></li>
+- Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GB):
+<li style="list-style-type: none"><pre><code>mkpart primary btrfs 50 550</code></pre></li>
+- Vytvořte oddíl na dočasné soubory o velikosti 2 GB:
+<li style="list-style-type: none"><pre><code>mkpart primary btrfs 550 552</code></pre></li>
+- Vytvořte swap oddíl o velikosti 2 GB:
+<li style="list-style-type: none"><pre><code>mkpart primary linux-swap 552 554</code></pre></li>
 - Oddíly zkontrolujte a editor ukončete:
 <li style="list-style-type: none"><pre><code>print
 quit</code></pre></li>
@@ -94,18 +114,21 @@ mount /dev/sdx4 /mnt/tmp</code></pre></li>
 <br><br><hr><br>
 
 ## Instalace
-- Upravte seznam zrcadel pro stahování balíčků. Řádky mažete klávesovou zkratkou **Ctrl** + **K**. Změny zavřete a uložíte **Ctrl** + **X** a klávesou <span class="red">Y</span>.
+- Upravte seznam zrcadel pro stahování balíčků. Řádky mažete klávesovou zkratkou **Ctrl** + **K**. Následně zbylé servery upravíte pro přístup přes https. Změny zavřete a uložíte **Ctrl** + **X** a klávesou <span class="red">Y</span>.
 <li style="list-style-type: none"><pre><code>nano /etc/pacman.d/mirrorlist</code></pre></li>
 <li style="list-style-type: none"><pre><code>##
 ## Arch Linux repository mirrorlist
 ## Filtered by mirror score from mirror status page
-## Generated on 2018-03-01
+## Generated on 2019-03-01
 ##
 
 ## Switzerland
 Server = https://pkg.adfinis-sygroup.ch/archlinux/$repo/os/$arch
+## Iceland
+Server = https://mirror.system.is/arch/$repo/os/$arch
 ## Switzerland
-Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch</code></pre></li>
+Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch
+</code></pre></li>
 - Vytvořte OS:
 <li style="list-style-type: none"><pre><code>pacstrap /mnt base base-devel</code></pre></li>
 - Po dokončení vytvořte *fstab* pro nový OS. Následně jej zkontrolujte.
@@ -115,23 +138,21 @@ cat /mnt/etc/fstab</code></pre></li>
 <br><br><hr><br>
 
 ## Konfigurace
-Gratuluji, to nejhorší již máte za sebou. ![smile](https://mople71.cz/img/sm/smile.gif)
-
 - Přepněte se do nového OS.
 <li style="list-style-type: none"><pre><code>arch-chroot /mnt</code></pre></li>
 - Nastavte čas:
 <li style="list-style-type: none"><pre><code>ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 hwclock --systohc</code></pre></li>
-- Nastavte lokalizaci (jazyk) OS. Chcete-li češtinu, v seznamu nalezněte řádek <span class="red">#cs_CZ.UTF-8</span> a odstraňte mřížku na jeho začátku.
+- Nastavte lokalizaci (jazyk) OS. Chcete-li češtinu, v seznamu nalezněte řádek <span class="red">#cs_CZ.UTF-8</span> a odstraňte mřížku na jeho začátku. Změny uložte.
 <li style="list-style-type: none"><pre><code>nano /etc/locale.gen</code></pre></li>
-- Vytvořte lokalizaci a určete ji jako výchozí:
+- Vytvořte požadovanou lokalizaci a určete ji jako výchozí:
 <li style="list-style-type: none"><pre><code>locale-gen
 echo LANG=cs_CZ.UTF-8 > /etc/locale.conf</code></pre></li>
 - Nastavte název svého OS v síti (např. *arch*):
 <li style="list-style-type: none"><pre><code>echo arch > /etc/hostname</code></pre></li>
 - Nainstalujte potřebné aplikace pro připojení k WiFi a nástroje k souborovým systémům:
-<li style="list-style-type: none"><pre><code>pacman -Sy iw wpa_supplicant dialog btrfs-progs ntfs-3g dosfstools</code></pre></li>
-- Máte-li novější CPU od **Intel**, nainstalujte microcode:
+<li style="list-style-type: none"><pre><code>pacman -Sy iw wpa_supplicant dialog btrfs-progs dosfstools</code></pre></li>
+- Máte-li novější CPU (Haswell a výše) od **Intel**, nainstalujte microcode:
 <li style="list-style-type: none"><pre><code>pacman -S intel-ucode</code></pre></li>
 - Nainstalujte **GRUB**:
 <li style="list-style-type: none"><pre><code>pacman -S grub efibootmgr
@@ -151,11 +172,12 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <li style="list-style-type: none"><pre><code>## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ...</code></pre></li>
+- Změny uložte.
 
 <br>
 
 ### Ovladače GPU:
-- Zjistěte, jakou máte grafickou kartu. Pokud si nejste jistí, můžete ověřit následujícím příkazem:
+- Zjistěte výrobce a model své grafické karty. Pokud si nejste jistí, můžete ověřit následujícím příkazem:
 <li style="list-style-type: none"><pre><code>lspci | grep -e VGA -e 3D</code></pre></li>
 - Následně dle tabulky vyberte vhodný ovladač.
 
@@ -170,12 +192,15 @@ S *open-source* ovladačem pro karty **nVidia** si moc dobře náročné hry nez
 | nVidia             | open-source  | xf86-video-nouveau | mesa         | mesa-vdpau,<br>libva-vdpau-driver     |
 | nVidia             | proprietární | nvidia             | nvidia-utils | nvidia-utils,<br>libva-vdpau-driver   |
 
-- Potřebné balíčky nainstalujte. Předpokládejme např. nVidia GTX 960:
-<li style="list-style-type: none"><pre><code>## Open-source:
+- Potřebné balíčky nainstalujte.
+<li style="list-style-type: none"><pre><code>## NVIDIA open-source:
 pacman -S xf86-video-nouveau mesa mesa-vdpau libva-vdpau-driver
 
-## Proprietární:
-pacman -S nvidia nvidia-utils libva-vdpau-driver</code></pre></li>
+## NVIDIA proprietární:
+pacman -S nvidia nvidia-utils libva-vdpau-driver
+
+## Intel open-source:
+pacman -S xf86-video-intel mesa libva-intel-driver</code></pre></li>
 
 <br>
 
@@ -189,6 +214,12 @@ pacman -S nvidia nvidia-utils libva-vdpau-driver</code></pre></li>
 
 - Nainstalujte si **acpi-call**.
 <li style="list-style-type: none"><pre><code>pacman -S acpi_call</code></pre></li>
+
+> Virtuální OS přes GNOME boxes
+
+- Nainstalujte si grafický ovladač **qxl** a **spice-vdagent**.
+<li style="list-style-type: none"><pre><code>pacman -S xf86-video-qxl spice-vdagent
+systemctl enable spice-vdagentd</code></pre></li>
 
 > Broadcom WiFi adaptér:
 
@@ -204,18 +235,17 @@ pacman -S nvidia nvidia-utils libva-vdpau-driver</code></pre></li>
 <br>
 
 ### Grafické rozhraní:
-- Nyní nainstalujte **GNOME** jako nejbezpečnější desktopové prostředí.
+- Nainstalujte **GNOME** jakožto nejpoužívanější desktopové prostředí.
 <li style="list-style-type: none"><pre><code>pacman -S gdm
-pacman -S gnome network-manager-applet</code></pre></li>
+pacman -S gnome network-manager-applet gnome-tweaks</code></pre></li>
 - Z výběru balíčků zvolte následující:
-<li style="list-style-type: none"><pre><code>evince, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters,
-gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer,
-gnome-getting-started-docs, gnome-keyring, gnome-menus, gnome-screenshot,
+<li style="list-style-type: none"><pre><code>epiphany, evince, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters,
+gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer, gnome-keyring, gnome-menus, gnome-screenshot,
 gnome-session, gnome-settings-daemon, gnome-shell, gnome-shell-extensions,
-gnome-system-monitor, gnome-terminal, gnome-themes-extra, gnome-user-docs,
-gnome-video-effects, gvfs, gvfs-afc, gvfs-goa, gvfs-google, gvfs-gphoto2,
-gvfs-mtp, gvfs-nfs, mousetweaks, mutter, nautilus, networkmanager, sushi,
-xdg-user-dirs-gtk, yelp, gnome-boxes, simple-scan</code></pre></li>
+gnome-system-monitor, gnome-terminal, gnome-themes-extra,
+gnome-video-effects, gvfs, gvfs-goa, gvfs-google,
+gvfs-mtp, mousetweaks, mutter, nautilus, networkmanager,
+xdg-user-dirs-gtk, gnome-boxes</code></pre></li>
 - Čísla výše zmíněných balíčků (mohou se měnit) zadejte následujícím způsobem a stiskněte **Enter**.
 <li style="list-style-type: none"><pre><code>5,6,8,9,10,12,...,64</code></pre></li>
 - Nastavte spuštění *GNOME* při startu:
@@ -237,7 +267,7 @@ systemctl enable NetworkManager</code></pre></li>
 - Zakažte přihlášení uživatele **root** a zároveň ověřte korektní konfiguraci *sudo*:
 <li style="list-style-type: none"><pre><code>sudo passwd -l root</code></pre></li>
 - Nainstalujte důležité knihovny a aplikace:
-<li style="list-style-type: none"><pre><code>sudo pacman -S gnome-tweaks asp gnupg mpv libmtp flatpak git acpi tlp youtube-dl unzip libmatroska flac libmad libx264 x265 gstreamer-vaapi pinentry
+<li style="list-style-type: none"><pre><code>sudo pacman -S asp gnupg openssh mpv libmtp flatpak git acpi tlp youtube-dl unzip libmatroska libmad x265 gstreamer-vaapi pinentry
 sudo systemctl enable tlp
 sudo systemctl enable tlp-sleep
 sudo systemctl mask systemd-rfkill
@@ -247,23 +277,18 @@ sudo systemctl mask systemd-rfkill.socket</code></pre></li>
 <br>
 
 ### Aplikace:
-- Otevřete si <span class="green">Terminál</span>. Nainstalujte flatpak verze aplikací. Preferujte *gnome* repo při dotazu.
+- Otevřete si <span class="green">Terminál</span>. Nainstalujte flatpak verze aplikací. Preferujte *flathub* repo při dotazu.
 <li style="list-style-type: none"><pre><code>flatpak remote-add --if-not-exists gnome https://sdk.gnome.org/gnome.flatpakrepo
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Evince
 sudo chmod 600 /usr/share/applications/evince.desktop
 flatpak install flathub org.gnome.eog
-flatpak install flathub org.gnome.Epiphany
-flatpak install flathub org.gnome.Calendar
-flatpak install flathub org.gnome.Weather
 flatpak install flathub org.libreoffice.LibreOffice
-flatpak install flathub com.transmissionbt.Transmission
 flatpak install flathub org.gimp.GIMP
-flatpak install flathub org.audacityteam.Audacity
 flatpak install flathub io.atom.Atom
 flatpak install flathub io.atom.electron.BaseApp
-flatpak install flathub com.valvesoftware.Steam
-flatpak install flathub org.signal.Signal</code></pre></li>
+flatpak install flathub com.transmissionbt.Transmission
+flatpak install flathub com.valvesoftware.Steam</code></pre></li>
 - Nainstalujte si **Paper Icon Theme**:
 <li style="list-style-type: none"><pre><code>git clone https://aur.archlinux.org/paper-icon-theme-git.git
 cd paper-icon-theme-git
@@ -275,31 +300,31 @@ makepkg -sri</code></pre></li>
 ### Zabezpečení:
 - Nastavte */tmp* oddíl jako **noexec**. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
 - Nepoužíváte-li *IPv6*, zakažte jej. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
-- Nastavte *DNSSEC* &ndash; 217.31.204.130,193.29.206.206 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
+- Nastavte CZ.NIC *DNSSEC* &ndash; 217.31.204.130,193.29.206.206 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
 - Nastavte **firewall**:
 <li style="list-style-type: none"><pre><code>sudo -i
-iptables -P INPUT   DROP
+iptables -P INPUT DROP
 iptables -A INPUT -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state NEW -j DROP
 iptables -N drop_invalid
-iptables -A OUTPUT   -m state --state INVALID  -j drop_invalid
-iptables -A INPUT    -m state --state INVALID  -j drop_invalid
+iptables -A OUTPUT -m state --state INVALID -j drop_invalid
+iptables -A INPUT -m state --state INVALID -j drop_invalid
 iptables -A INPUT -p tcp -m tcp --sport 1:65535 --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j drop_invalid
 iptables -A drop_invalid -j LOG --log-level debug --log-prefix "INVALID state -- DENY "
 iptables -A drop_invalid -j DROP
-iptables -A INPUT  -m state --state ESTABLISHED,RELATED  -j ACCEPT
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
 iptables -N In_RULE_1
-iptables -A INPUT -p udp -m udp  -j In_RULE_1
-iptables -A In_RULE_1  -j LOG  --log-level info --log-prefix "UDP -- DENY "
-iptables -A In_RULE_1  -j DROP
+iptables -A INPUT -p udp -m udp -j In_RULE_1
+iptables -A In_RULE_1 -j LOG --log-level info --log-prefix "UDP -- DENY "
+iptables -A In_RULE_1 -j DROP
 iptables -N In_RULE_2
-iptables -A INPUT -p tcp -m tcp  -j In_RULE_2
-iptables -A In_RULE_2  -j LOG  --log-level info --log-prefix "TCP -- DENY "
-iptables -A In_RULE_2  -j DROP
+iptables -A INPUT -p tcp -m tcp -j In_RULE_2
+iptables -A In_RULE_2 -j LOG  --log-level info --log-prefix "TCP -- DENY "
+iptables -A In_RULE_2 -j DROP
 iptables -N In_RULE_3
-iptables -A INPUT  -j In_RULE_3
-iptables -A In_RULE_3  -j LOG  --log-level info --log-prefix "XXX -- DENY "
-iptables -A In_RULE_3  -j DROP
+iptables -A INPUT -j In_RULE_3
+iptables -A In_RULE_3 -j LOG --log-level info --log-prefix "XXX -- DENY "
+iptables -A In_RULE_3 -j DROP
 iptables-save > /etc/iptables/iptables.rules
 systemctl enable iptables</code></pre></li>
 - Na citlivé záležitosti jako bankovnictví používejte prohlížeč **GNOME Web**. Chcete-li na internetu provádět i jiné činnosti, nainstalujte si **Chromium**.
@@ -307,7 +332,7 @@ systemctl enable iptables</code></pre></li>
 - Restartujte OS.
 
 <div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
-Tímto jste nainstalovali a bezpečně nakonfigurovali Arch Linux.</p></div>
+Tímto jste nainstalovali Arch Linux a provedli jeho základní konfiguraci.</p></div>
 
 <br><br><hr><br>
 
