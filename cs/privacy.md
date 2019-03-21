@@ -21,7 +21,11 @@
 ...
 ### Operační systém:
 - Linux
+  - Arch Linux
+  - Debian
+  - Tails
 - BSD
+  - OpenBSD
 - OSX/WNT notice
 - ...
 
@@ -29,7 +33,13 @@
 - Brave
 - Waterfox
 - Chromium
-- tips
+- uBlock Origin, https://decentraleyes.org/
+- ...
+
+### Šifrování souborů:
+- GnuPG
+- LUKS, dm-crypt
+- BitLocker notice
 - ...
 
 <br>
@@ -56,8 +66,16 @@
 - Tox
 - ...
 
+### Platební transakce:
+- cash
+- Monero, Litecoin
+- VISA; Mastercard notice
+- ...
+
 ### Cloud:
 - Nextcloud &ndash; self-hosted nebo https://nextcloud.com/providers/
+  - https://woelkli.com/en
+  - https://eqipe.ch/nextcloud/
 - gDrive, OneDrive etc. notice
 - ...
 
@@ -65,14 +83,15 @@
 - Mastodon
 - Friendica
 - PixelFed
+- PeerTube
 - FB notice
 - ...
 
-### Šifrování souborů:
-- GnuPG
-- LUKS, dm-crypt
-- BitLocker notice
-- ...
+### VPN:
+- https://cryptostorm.is/
+- https://www.ivpn.net/
+- https://mullvad.net/en/
+- https://www.f-secure.com/en/home/products/freedome
 
 ### Sdílení souborů:
 - OnionShare
@@ -83,3 +102,12 @@
 - 1password
 - Bitwarden
 - ...
+
+### Mapy:
+- https://www.openstreetmap.org/
+- Mapy.cz
+
+<br>
+
+## Ochrana před narušením soukromí
+...
