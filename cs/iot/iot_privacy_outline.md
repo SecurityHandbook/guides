@@ -6,6 +6,7 @@
 ### Síťové prvky:
 - routery
   - Mikrotik (RouterOS)
+  - Turris
 - Raspberry Pi
 - poskytovatelé služeb &ndash; Verizon notice
 - ...
@@ -33,10 +34,18 @@
 - ostatní: ...
 - ...
 
+### Internetový prohlížeč:
+- GNOME Web
+- Brave
+- Chromium
+- Safari
+- ...
+
 ### Aplikace:
+- Android &ndash; https://guide.mople71.cz/cs/iot/apps.php
 - ...
 
 <br>
 
-## Služby
-...
+## Služby respektující soukromí
+... self-hosting the best

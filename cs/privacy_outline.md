@@ -30,6 +30,7 @@
 - ...
 
 ### Internetový prohlížeč:
+- GNOME Web
 - Brave
 - Waterfox
 - Chromium
@@ -90,6 +91,7 @@
 ### VPN:
 - https://cryptostorm.is/
 - https://www.ivpn.net/
+- https://protonvpn.com/
 - https://mullvad.net/en/
 - https://www.f-secure.com/en/home/products/freedome
 
@@ -106,6 +108,8 @@
 ### Mapy:
 - https://www.openstreetmap.org/
 - Mapy.cz
+
+...
 
 <br>
 
