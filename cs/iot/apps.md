@@ -1,10 +1,10 @@
 # Seznam aplikací
-Osobní seznam používaných aplikací a jejich nastavení. Většina je open-source, výjimky jsou označeny.
+Osobní seznam používaných aplikací a jejich nastavení. Většina je open-source, výjimky jsou označeny. Zařízení: **LGE Nexus 5X**
 
 <br>
 
 ## Systém:
-- [Virtual Hosts](https://play.google.com/store/apps/details?id=com.github.xfalcon.vhosts&hl=cs) &ndash; blokace domén pomocí *hosts* souboru
+- [Virtual Hosts](https://play.google.com/store/apps/details?id=com.github.xfalcon.vhosts&hl=cs) &ndash; blokace statických i wildcard domén pomocí *dnsmasq*
   - licence: **GPL 3.0**
   - zdrojový kód: https://github.com/x-falcon/Virtual-Hosts
   - zakázaná oprávnění: -
@@ -15,11 +15,12 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 - [F-Droid](https://f-droid.org/) &ndash; aplikace
   - licence: **GPL 3.0**
   - zdrojový kód: https://gitlab.com/fdroid/fdroidclient
-  - zakázaná oprávnění: -
+  - zakázaná oprávnění: *vše*
 - [Yalp Store](https://github.com/yeriomin/YalpStore/releases) &ndash; aplikace z Google Play
   - licence: **GPL 2.0**
   - zdrojový kód: https://github.com/yeriomin/YalpStore
-  - zakázaná oprávnění: -
+  - zakázaná oprávnění: *Storage*
+  - speciální nastavení: *ukládání stahovaných aplikací do interního úložiště aplikace*
 
 <br>
 
@@ -31,7 +32,7 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 - [Android Messages (2.3.265)](https://play.google.com/store/apps/details?id=com.google.android.apps.messaging&hl=cs) &ndash; SMS
   - licence: **&copy; Google, Inc.**
   - zdrojový kód: <span class="red">proprietární</span>
-  - zakázaná oprávnění: *Location*, *Network*, *Sensors*
+  - zakázaná oprávnění: *Location*, *Network*
 - [Threema](https://threema.ch/en/download) &ndash; instant messaging
   - licence: **&copy; Threema GmbH**
   - zdrojový kód: <span style="color: #ff8000">**částečně proprietární**</span> (https://threema.ch/en/faq/source_code)
@@ -39,7 +40,7 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 - [WhatsApp](https://play.google.com/store/apps/details?id=com.whatsapp&hl=cs) &ndash; instant messaging
   - licence: **&copy; WhatsApp Inc.**
   - zdrojový kód: <span class="red">proprietární</span>
-  - zakázaná oprávnění: *Location*, *Microphone*, *SMS*, *Sensors*, příležitostně *Storage*, *Telephone*
+  - zakázaná oprávnění: *Telephone*, *Location*, *Microphone*, *SMS*, většinou *Storage*
 - [Twitlatte](https://play.google.com/store/apps/details?id=com.github.moko256.twitlatte&hl=cs) &ndash; klient pro Twitter a Mastodon
   - licence: **Apache 2.0**
   - zdrojový kód: https://github.com/moko256/twitlatte
@@ -84,10 +85,10 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
   - licence: **Apache 2.0**
   - zdrojový kód: https://github.com/kollerlukas/Camera-Roll-Android-App
   - zakázaná oprávnění: -
-- [Music Player GO](https://play.google.com/store/apps/details?id=com.iven.musicplayergo&hl=cs) &ndash; hudba
+- [Shuttle](https://play.google.com/store/apps/details?id=another.music.player&hl=cs) &ndash; hudba
   - licence: **GPL 3.0**
-  - zdrojový kód: https://github.com/enricocid/Music-Player-GO
-  - zakázaná oprávnění: -
+  - zdrojový kód: https://github.com/timusus/Shuttle
+  - zakázaná oprávnění: *Network*
 - [VLC](https://www.videolan.org/vlc/download-android.html) &ndash; video
   - licence: **GPL 2.0**
   - zdrojový kód: https://code.videolan.org/videolan/vlc-android
@@ -96,9 +97,9 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 <br>
 
 ## Navigace:
-- [Mapy.cz](https://play.google.com/store/apps/details?id=cz.seznam.mapy&hl=cs)
-  - licence: **&copy; Seznam.cz, a.s.**
-  - zdrojový kód: <span class="red">proprietární</span>
+- [Maps](https://gitlab.com/axet/omim/-/releases)
+  - licence: **Apache 2.0**
+  - zdrojový kód: https://gitlab.com/axet/omim
   - zakázaná oprávnění: -
 - [ForRunners](https://play.google.com/store/apps/details?id=net.khertan.forrunners&hl=cs) &ndash; aplikace pro běžce
   - licence: **GPL 3.0**
@@ -116,10 +117,6 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
   - licence: **&copy; Seznam.cz, a.s.**
   - zdrojový kód: <span class="red">proprietární</span>
   - zakázaná oprávnění: -
-- [Blue Light Filter - Night Mode](https://play.google.com/store/apps/details?id=com.eyefilter.nightmode.bluelightfilter&hl=cs) &ndash; filtr modrého světla
-  - licence: **&copy; Leap Fitness Group**
-  - zdrojový kód: <span class="red">proprietární</span>
-  - zakázaná oprávnění: *vše*
 
 <br>
 
@@ -132,7 +129,6 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
   - licence: **GPL 3.0**
   - zdrojový kód: https://github.com/SecUSo/privacy-friendly-sudoku
   - zakázaná oprávnění: -
-- 2048
 
 <br><br><hr>
 
