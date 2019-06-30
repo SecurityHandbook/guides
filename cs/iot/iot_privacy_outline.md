@@ -1,11 +1,14 @@
 # Ochrana soukromí ve světě chytrých zařízení
 ...
 
+<br>
+
 ## Hardware respektující soukromí
-...
+...neexistuje
+
 ### Síťové prvky:
 - routery
-  - Mikrotik (RouterOS)
+  - Mikrotik
   - Turris
 - Raspberry Pi
 - poskytovatelé služeb &ndash; Verizon notice
@@ -14,18 +17,18 @@
 ### Mobilní zařízení:
 - Purism
 - Pixel/Sony/FairPhone &ndash; custom FW
-- others
-- Apple notice
+- Apple n' others notice
 - ...
 
 ### Ostatní:
 - smart wearables
 - ...
 
-<br>
+<br><br><hr><br>
 
 ## Software respektující soukromí
-...
+...existuje
+
 ### Operační systém:
 - Linux &ndash; Librem 5, Nexus 5, Jolla
 - AOSP &ndash; Pixel/Sony/FairPhone
@@ -35,9 +38,9 @@
 - ...
 
 ### Internetový prohlížeč:
+- Chromium
 - GNOME Web
 - Brave
-- Chromium
 - Safari
 - ...
 
@@ -45,7 +48,7 @@
 - Android &ndash; https://guide.mople71.cz/cs/iot/apps.php
 - ...
 
-<br>
+<br><br><hr><br>
 
-## Služby respektující soukromí
-... self-hosting the best
+## Ochrana před narušením soukromí
+...Handbook

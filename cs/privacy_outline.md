@@ -1,12 +1,15 @@
 # Ochrana soukromí v digitálním světě
 ...
 
+<br>
+
 ## Hardware respektující soukromí
-...
+...neexistuje
+
 ### Stolní počítače:
 - FSF certified
 - AMD
-- no blobs
+- RISC-V, POWER9
 - ...
 
 ### Notebooky:
@@ -15,10 +18,11 @@
 - Mac
 - ...
 
-<br>
+<br><br><hr><br>
 
 ## Software respektující soukromí
-...
+...existuje, opensource
+
 ### Operační systém:
 - Linux
   - Arch Linux
@@ -30,10 +34,10 @@
 - ...
 
 ### Internetový prohlížeč:
+- Chromium
 - GNOME Web
 - Brave
 - Waterfox
-- Chromium
 - uBlock Origin, https://decentraleyes.org/
 - ...
 
@@ -43,7 +47,7 @@
 - BitLocker notice
 - ...
 
-<br>
+<br><br><hr><br>
 
 ## Služby respektující soukromí
 ... self-hosting the best
@@ -51,13 +55,12 @@
 ### Internetový vyhledávač:
 - Qwant
 - searx
-- StartPage/DuckDuckGo
+- StartPage
 - ...
 
 ### E-mail:
 - KolabNow
 - Protonmail
-- maybe Tutanota
 - ...
 
 ### Komunikace:
@@ -68,8 +71,8 @@
 - ...
 
 ### Platební transakce:
-- cash
-- Monero, Litecoin
+- **cash**
+- Monero; Litecoin notice
 - VISA; Mastercard notice
 - ...
 
@@ -107,11 +110,11 @@
 
 ### Mapy:
 - https://www.openstreetmap.org/
-- Mapy.cz
+- Mapy.cz notice
 
 ...
 
-<br>
+<br><br><hr><br>
 
 ## Ochrana před narušením soukromí
-...
+...Handbook
