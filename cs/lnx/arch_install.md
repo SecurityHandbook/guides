@@ -9,14 +9,14 @@ Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vy
 - Otevřete si [následující stránku](https://pkg.adfinis-sygroup.ch/archlinux/iso/latest/).
 - Stáhněte si nejnovější *ISO* a jeho *SIG* podpis.
 - Zkontrolujte podpis ISO souboru pomocí následujícího příkazu:
-<li style="list-style-type: none"><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-<verze>-x86_64.iso.sig</code></pre></li>
+<li style="list-style-type: none"><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-\*.iso.sig</code></pre></li>
 - Vložte USB disk do PC.
-- Zjistěte jeho identifikátor:
+- Zjistěte jeho identifikátor.
 <li style="list-style-type: none"><pre><code>lsblk</code></pre></li>
-- Následně jej odpojte &ndash; s největší pravděpodobností byl automaticky připojen. (<span class="red">x</span> vždy nahraďte příslušným písmenem)
+- Následně jej odpojte &ndash; pokud byl automaticky připojen. (místo <span class="red">x</span> vždy dosaďte příslušné písmeno)
 <li style="list-style-type: none"><pre><code>sudo umount /dev/sdx</code></pre></li>
 - Rozbalte na něj instalační soubory *Arch Linux*.
-<li style="list-style-type: none"><pre><code>sudo dd bs=4M if=/cesta/k/archlinux-<verze>-x86_64.iso of=/dev/sdx status=progress && sync</code></pre></li>
+<li style="list-style-type: none"><pre><code>sudo dd bs=4M if=./archlinux-\*.iso of=/dev/sdx status=progress && sync</code></pre></li>
 
 <br><br><hr><br>
 
@@ -32,17 +32,17 @@ Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vy
 <br>
 
 ### Rozdělení disku:
-- Zjistěte název a aktuální stav požadovaného disku:
+- Zjistěte název a aktuální rozložení požadovaného disku:
 <li style="list-style-type: none"><pre><code>lsblk</code></pre></li>
-- Jakmile identifikujete váš disk, otevřete jej v aplikaci <span class="green">parted</span>. (<span class="red">x</span> vždy nahraďte příslušným písmenem)
+- Jakmile identifikujete váš disk, otevřete jej v aplikaci <span class="green">parted</span>.
 <li style="list-style-type: none"><pre><code>parted /dev/sdx</code></pre></li>
 - Otevře se správa disku. Nastavte *GiB* jako výchozí jednotku a následně vypište aktuální stav disku.
 <li style="list-style-type: none"><pre><code>unit GiB
 print</code></pre></li>
-- Před vytvořením nové tabulky oddílů určtete požadovaný typ rozdělení disku: **GPT** či **MBR**.
+- Před vytvořením nové tabulky oddílů určtete požadovaný typ rozdělení disku (**GPT** či **MBR**).
 
 <div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
-Pro stroje z roku 2014 a novější pravděpodobně bude jednat o GPT. U starších přístrojů a většiny virtuálních prostředí ve výchozím nastavení se bude jednat o MBR. Kroky níže jsou optimalizovány pro GPT schéma.</p></div>
+Pro stroje z roku 2014 a novější pravděpodobně bude jednat o GPT. U starších přístrojů a většiny virtuálních prostředí ve výchozím nastavení se bude jednat o MBR. **Kroky níže jsou optimalizovány pro GPT schéma.**</p></div>
 
 > Přepsání celého disku a vymezení určité části pro Arch (1 disk GPT)
 
@@ -68,7 +68,8 @@ quit</code></pre></li>
 - Odstraňte předchozí záznamy o diskových oddílech.
 <li style="list-style-type: none"><pre><code>mklabel msdos</code></pre></li>
 - Vytvořte systémový oddíl o velikosti 50 GiB:
-<li style="list-style-type: none"><pre><code>mkpart primary btrfs 1MiB 50</code></pre></li>
+<li style="list-style-type: none"><pre><code>mkpart primary btrfs 1MiB 50
+set 1 boot on</code></pre></li>
 - Vytvořte datový oddíl libovolné velikosti (v příkladu níže 500 GiB):
 <li style="list-style-type: none"><pre><code>mkpart primary btrfs 50 550</code></pre></li>
 - Vytvořte oddíl na dočasné soubory o velikosti 2 GiB:
@@ -151,7 +152,7 @@ echo LANG=cs_CZ.UTF-8 > /etc/locale.conf</code></pre></li>
 <li style="list-style-type: none"><pre><code>echo arch > /etc/hostname</code></pre></li>
 - Nainstalujte potřebné aplikace pro připojení k WiFi a nástroje k souborovým systémům:
 <li style="list-style-type: none"><pre><code>pacman -Sy iw wpa_supplicant dialog btrfs-progs dosfstools</code></pre></li>
-- Máte-li novější CPU (Haswell a výše) od **Intel**, nainstalujte microcode:
+- Máte-li novější CPU (Sandy Bridge a výše) od **Intel**, nainstalujte microcode:
 <li style="list-style-type: none"><pre><code>pacman -S intel-ucode</code></pre></li>
 - Nainstalujte **GRUB**:
 <li style="list-style-type: none"><pre><code>pacman -S grub efibootmgr
@@ -165,9 +166,8 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <li style="list-style-type: none"><pre><code>useradd -m -G wheel -s /bin/bash uživatelské_jméno</code></pre></li>
 - Změňte heslo uživatele.
 <li style="list-style-type: none"><pre><code>passwd uživatelské_jméno</code></pre></li>
-- Nastavte **sudo**:
+- Nastavte **sudo**. Sjeďte na konec souboru, nalezněte řádek <span class="red">#%wheel ALL=(ALL) ALL</span> a odstraňte mřížku na jeho začátku.
 <li style="list-style-type: none"><pre><code>EDITOR=nano visudo</code></pre></li>
-- Sjeďte na konec souboru, nalezněte řádek <span class="red">#%wheel ALL=(ALL) ALL</span> a odstraňte mřížku na jeho začátku:
 <li style="list-style-type: none"><pre><code>## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ...</code></pre></li>
@@ -209,7 +209,7 @@ pacman -S xf86-video-intel mesa libva-intel-driver</code></pre></li>
 - Nainstalujte si **tp-smapi**.
 <li style="list-style-type: none"><pre><code>pacman -S tp_smapi</code></pre></li>
 
-> Novější ThinkPad NTBs (SandyBridge a výše):
+> Novější ThinkPad NTBs (Sandy Bridge a výše):
 
 - Nainstalujte si **acpi-call**.
 <li style="list-style-type: none"><pre><code>pacman -S acpi_call</code></pre></li>
@@ -266,7 +266,7 @@ systemctl enable NetworkManager</code></pre></li>
 - Zakažte přihlášení uživatele **root** a zároveň ověřte korektní konfiguraci *sudo*:
 <li style="list-style-type: none"><pre><code>sudo passwd -l root</code></pre></li>
 - Nainstalujte důležité knihovny a aplikace:
-<li style="list-style-type: none"><pre><code>sudo pacman -S asp gnupg openssh mpv libmtp flatpak git acpi tlp youtube-dl unzip libmatroska libmad x265 gstreamer-vaapi pinentry
+<li style="list-style-type: none"><pre><code>sudo pacman -S asp openssh mpv flatpak git acpi tlp youtube-dl libmatroska libmad gstreamer-vaapi
 sudo systemctl enable tlp
 sudo systemctl enable tlp-sleep
 sudo systemctl mask systemd-rfkill
