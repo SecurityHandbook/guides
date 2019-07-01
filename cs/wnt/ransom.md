@@ -1,16 +1,12 @@
 # Zašifrovaná data &ndash; jak postupovat při infikaci ransomware
 
-Ransomware je aktuálně nejoblíbenější technika hackerů, jak si vcelku jednoduše vydělat slušné peníze. Jedná se o druh malware, který po svém spuštění uživateli zablokuje přístup ke všem datům (nejčastěji zašifrováním dat), a následně za jejich dešifrování požaduje peníze.
-
-Platby drtivá většina ransomware požaduje v anonymní měně bitcoin (BTC). Ceny za dešifrování se pohybují od 0.1 BTC (~34.000 CZK) do 48 BTC (~16.320.000 CZK).
+Ransomware je aktuálně nejoblíbenější technika hackerů, jak si vcelku jednoduše vydělat slušné peníze. Jedná se o druh malware, který po svém spuštění uživateli zablokuje přístup ke všem datům (nejčastěji zašifrováním dat), a následně za jejich dešifrování požaduje peníze. Platby drtivá většina ransomware požaduje v relativně anonymní měně Bitcoin (BTC) či Monero (XMR).
 
 Ransomware se do OS nejčastěji dostane lidskou chybou &ndash; příloha k mailu, zdánlivě bezpečná aplikace, odkliknutí bezpečnostního varování apod. Také se ovšem do OS může dostat chybou v děravém síťovém SW jako Flash nebo Java, dokonce někdy stačí pouze otevřít stránku se škodlivou reklamou.
 
 Z těchto důvodů ransomware představuje obrovské riziko pro jednotlivce i společnosti. Infekce ransomware není neobvyklá a není to žádná ostuda &ndash; může se to stát komukoli (také už jsem si svojí chybou znehodnotil mnoho svých dat, nutno ovšem poznamenat, že vše neprodleně obnovil ze zálohy).
 
 <span class="red">Je důrazně doporučeno nic neplatit</span>, jelikož tím autory podporujete k další činnosti. Bohužel, někdy to je jediná cesta, jak svá cenná data získat zpět. Veřejnost si často myslí, že ransomware není žádný problém, že stačí chvíli hledat na internetu a na daný druh ransomware najdete dekrypter (aplikace, která umožňuje soubory zadarmo rozšifrovat). Není to tak úplně pravda.
-
-V současnosti evidujeme cca. 450 různých rodin ransomware (počítám jen ty řádně zdokumentované). Dekryptery jsou aktuálně dostupné cca. pro čtvrtinu rodin. To nám dává teoretickou pravdědobnost <span class="red">3 : 1</span>, že zašifrovaná data v současnosti neobnovíte. V praxi je to číslo samozřejmě jiné, ale rozhodně nebude o moc lepší &ndash; nejrozšířenější rodiny *ransomware* často nejsou dešifrovatelné.
 
 Níže si povíme, jak správně identifikovat rodinu ransomware, zjistit, zdali pro ni existuje dekrypter &ndash; pokud ano, jak obnovit data. Následně si řekneme, jak se ransomware zbavit.
 
@@ -99,7 +95,7 @@ Návody na čistou instalaci + vyčištění disku (DISKPART část v návodech)
 
 - [Čistá instalace Windows 10](https://guide.mople71.cz/cs/wnt/w10install.php)
 - [Čistá instalace Windows 8.1](https://guide.mople71.cz/cs/wnt/w8install.php)
-- [Čistá instalace Windows 7](https://forum.zive.cz/viewtopic.php?f=1864&t=1235730)
+- [Čistá instalace Windows 7](https://guide.mople71.cz/cs/wnt/w7install.php)
 
 <br><br><hr><br>
 

@@ -19,5 +19,4 @@
 <br>
 
 ## OS Android:
-- [Jak vybrat bezpečný telefon s OS Android](https://guide.mople71.cz/cs/iot/andr_vyber.php)
 - [Seznam aplikací](https://guide.mople71.cz/cs/iot/apps.php)
