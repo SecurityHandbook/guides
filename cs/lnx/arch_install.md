@@ -4,7 +4,7 @@ Aktualizovaný postup ke korektní instalaci distribuce *Arch Linux* není vždy
 <br>
 
 ## Instalační médium
-Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vytváříte instalační médium z **OS Windows**, jednoduše použijte <a href="http://rufus.akeo.ie/">Rufus</a>.
+Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vytváříte instalační médium z **OS Windows**, jednoduše použijte [Rufus](https://guide.mople71.cz/cs/wnt/rufus.php).
 
 - Otevřete si [následující stránku](https://pkg.adfinis-sygroup.ch/archlinux/iso/latest/).
 - Stáhněte si nejnovější *ISO* a jeho *SIG* podpis.
@@ -245,7 +245,7 @@ gnome-system-monitor, gnome-terminal, gnome-themes-extra,
 gnome-video-effects, gvfs, gvfs-goa, gvfs-google,
 gvfs-mtp, mousetweaks, mutter, nautilus, networkmanager,
 xdg-user-dirs-gtk, gnome-boxes</code></pre></li>
-- Čísla výše zmíněných balíčků (mohou se měnit) zadejte následujícím způsobem a stiskněte **Enter**.
+- Čísla výše zmíněných balíčků (v čase se mění) zadejte následujícím způsobem a stiskněte **Enter**.
 <li style="list-style-type: none"><pre><code>5,6,8,9,10,12,...,64</code></pre></li>
 - Nastavte spuštění *GNOME* při startu:
 <li style="list-style-type: none"><pre><code>systemctl enable gdm
@@ -266,7 +266,7 @@ systemctl enable NetworkManager</code></pre></li>
 - Zakažte přihlášení uživatele **root** a zároveň ověřte korektní konfiguraci *sudo*:
 <li style="list-style-type: none"><pre><code>sudo passwd -l root</code></pre></li>
 - Nainstalujte důležité knihovny a aplikace:
-<li style="list-style-type: none"><pre><code>sudo pacman -S asp openssh mpv flatpak git acpi tlp youtube-dl libmatroska libmad gstreamer-vaapi
+<li style="list-style-type: none"><pre><code>sudo pacman -S nftables asp mpv flatpak git acpi tlp youtube-dl libmatroska gstreamer-vaapi
 sudo systemctl enable tlp
 sudo systemctl enable tlp-sleep
 sudo systemctl mask systemd-rfkill
@@ -299,21 +299,31 @@ makepkg -sri</code></pre></li>
 ### Zabezpečení:
 - Nastavte */tmp* oddíl jako **noexec**. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
 - Nepoužíváte-li *IPv6*, zakažte jej. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
-- Nastavte CZ.NIC *DNSSEC* &ndash; 217.31.204.130,193.29.206.206 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
-- Nastavte **firewall**:
+- Nastavte CZ.NIC *DNSSEC* &ndash; 193.17.47.1,185.43.135.1 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
+- Nastavte **firewall** (podrobnější návod [zde](https://faq.mople71.cz/cs/lnx/adv.php#lnx1.1)):
 <li style="list-style-type: none"><pre><code>sudo -i
-iptables -P INPUT DROP
-iptables -A INPUT -p tcp -m tcp ! --tcp-flags SYN,RST,ACK SYN -m state --state NEW -j DROP
-iptables -N drop_invalid
-iptables -A OUTPUT -m state --state INVALID -j drop_invalid
-iptables -A INPUT -m state --state INVALID -j drop_invalid
-iptables -A INPUT -p tcp -m tcp --sport 1:65535 --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j drop_invalid
-iptables -A drop_invalid -j LOG --log-level debug --log-prefix "INVALID state -- DENY "
-iptables -A drop_invalid -j DROP
-iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A INPUT -i lo -j ACCEPT
-iptables-save > /etc/iptables/iptables.rules
-systemctl enable iptables</code></pre></li>
+nano /etc/nftables.conf
+---------------------
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
+        ct state invalid drop
+        ct state established,related accept
+        iif "lo" accept
+    }
+
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+    }
+
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
+}
+---------------------
+systemctl enable nftables
+systemctl start nftables
+nft list ruleset</code></pre></li>
 - Na citlivé záležitosti jako bankovnictví používejte prohlížeč **GNOME Web**. Chcete-li na internetu provádět i jiné činnosti, nainstalujte si **Chromium**.
 - Bezpečně nastavte prohlížeč(e). Návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx4).
 - Restartujte OS.
@@ -324,7 +334,7 @@ Tímto jste nainstalovali Arch Linux a provedli jeho základní konfiguraci.</p>
 <br><br><hr><br>
 
 ## Doporučení:
-- V prvé řadě si prostudujte <a href="https://faq.mople71.cz/cs/lnx/index.php#lin">FAQ Bezpečnosti</a>. Až se pořádně seznámíte s OS a rozšíříte své znalosti, prostudujte si i <a href="https://faq.mople71.cz/cs/lnx/adv.php#lin">FAQ Bezpečnosti pro pokročilé</a>.
+- V prvé řadě si prostudujte <a href="https://faq.mople71.cz/cs/lnx/index.php#lnx">FAQ Bezpečnosti</a>. Až se pořádně seznámíte s OS a rozšíříte své znalosti, prostudujte si i <a href="https://faq.mople71.cz/cs/lnx/adv.php#lnx">FAQ Bezpečnosti pro pokročilé</a>.
 - Preferujte Flatpak verze aplikací.
 - ...
 

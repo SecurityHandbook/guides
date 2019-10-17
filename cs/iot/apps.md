@@ -1,5 +1,5 @@
 # Seznam aplikací
-Osobní seznam používaných aplikací a jejich nastavení. Většina je open-source, výjimky jsou označeny. Zařízení: **LGE Nexus 5X**
+Osobní seznam používaných aplikací a jejich nastavení. Většina je open-source, výjimky jsou označeny. Zařízení: **Google Pixel 3a**
 
 <br>
 
@@ -8,19 +8,23 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
   - licence: **GPL 3.0**
   - zdrojový kód: https://github.com/x-falcon/Virtual-Hosts
   - zakázaná oprávnění: -
-- [DAVdroid](https://play.google.com/store/apps/details?id=at.bitfire.davdroid&hl=cs) &ndash; synchronizace
+- [DAVx&#8309;](https://play.google.com/store/apps/details?id=at.bitfire.davdroid&hl=cs) &ndash; synchronizace
   - licence: **GPL 3.0**
-  - zdrojový kód: https://gitlab.com/bitfireAT/davdroid
+  - zdrojový kód: https://gitlab.com/bitfireAT/davx5-ose
   - zakázaná oprávnění: -
-- [F-Droid](https://f-droid.org/) &ndash; aplikace
+- [ICSx&#8309;](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid&hl=cs) &ndash; odběr kalendáře
   - licence: **GPL 3.0**
-  - zdrojový kód: https://gitlab.com/fdroid/fdroidclient
-  - zakázaná oprávnění: *vše*
-- [Yalp Store](https://github.com/yeriomin/YalpStore/releases) &ndash; aplikace z Google Play
-  - licence: **GPL 2.0**
-  - zdrojový kód: https://github.com/yeriomin/YalpStore
+  - zdrojový kód: https://gitlab.com/bitfireAT/icsx5
+  - zakázaná oprávnění: -
+- [Aurora Store](https://gitlab.com/AuroraOSS/AuroraStore/-/releases)
+  - licence: **GPL 3.0**
+  - zdrojový kód: https://gitlab.com/AuroraOSS/AuroraStore
   - zakázaná oprávnění: *Storage*
-  - speciální nastavení: *ukládání stahovaných aplikací do interního úložiště aplikace*
+  - speciální nastavení: *ukládání do interního úložiště aplikace*
+- [OpenVPN Connect](https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=cs)
+  - licence: **&copy; OpenVPN Inc.**
+  - zdrojový kód: <span class="red">proprietární</span>
+  - zakázaná oprávnění: -
 
 <br>
 
@@ -73,6 +77,10 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
   - licence: **GPL 3.0**
   - zdrojový kód: https://github.com/termux/termux-app
   - zakázaná oprávnění: -
+- [PDF Viewer](https://play.google.com/store/apps/details?id=org.grapheneos.pdfviewer&hl=cs)
+  - licence: **MIT**
+  - zdrojový kód: https://github.com/GrapheneOS/PdfViewer
+  - zakázaná oprávnění: -
 
 <br>
 
@@ -121,7 +129,7 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 <br>
 
 ## Hry:
-- [1010! Klooni](https://f-droid.org/app/io.github.lonamiwebs.klooni)
+- [1010! Klooni](https://lonami.dev/klooni/)
   - licence: **GPL 3.0**
   - zdrojový kód: https://github.com/LonamiWebs/Klooni1010
   - zakázaná oprávnění: -
