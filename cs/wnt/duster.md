@@ -65,39 +65,29 @@ Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi 
 K bezpečné údržbě vašeho OS používejte vestavěné nástroje Windows.
 
 <div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
-Následující postup je vhodné provádět 1x za měsíc.</p></div>
+Následující postup je vhodné provádět 1x za 3 měsíce.</p></div>
 
 <h3 class="nocol">![cleanmgr](https://mople71.cz/img/icons/cleanmgr.png) Disk Space Cleanup Manager</h3>
 
 - Otevřete si **hledání Windows**, do vyhledávacího pole zadejte:
 <li style="list-style-type: none"><pre><code>cleanmgr</code></pre></li>
 - Na nalezenou položku klikněte pravým tlačítkem a zvolte možnost: ![admin](https://mople71.cz/img/icons/admin.png) **Spustit jako správce**.
-- Budete-li vyzváni k výběru disku k pročištění, ponechte výchozí nastavení (systémový disk C) a klikněte na tlačítko <span class="green">OK</span>.
-- Otevře se nabídka souborů ke smazání. Zde zatrhněte veškeré dostupné možnosti a klikněte na <span class="green">OK</span> a následně odsouhlaste odstranění souborů.
+- Budete-li vyzváni k výběru disku k pročištění, ponechte výchozí nastavení (*systémový disk C*) a klikněte na tlačítko <span class="green">OK</span>.
+- Otevře se nabídka souborů ke smazání. Zatrhněte veškeré dostupné možnosti kromě **Stažené soubory** a **Záložní soubory aktualizace**.
+- Klikněte na <span class="green">OK</span> a odsouhlaste odstranění souborů.
 - Nechte aplikaci pracovat, po dokončení požadovaného čištění se sama ukončí.
 
 <br>
 
 <div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
-Následující postup je vhodné provádět 1x týdně.</p></div>
+Následující postup je vhodné provádět 1x za dva týdny, případně měsíčně.</p></div>
 
 <h3 class="nocol">![cmd](https://mople71.cz/img/icons/cmd.png) Čištění TEMP</h3>
 
-- Stiskněte kláv. zkratku <img src="https://mople71.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell (správce)</span>.
+- Stiskněte kláv. zkratku <img src="https://mople71.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell</span>.
 <li style="list-style-type: none">![wx](https://guide.mople71.cz/img/cs/wx.png)</li>
 - Do příkazové řádky zadejte následující příkaz:
 <li style="list-style-type: none"><pre><code>Get-ChildItem -Recurse $Env:TMP | Remove-Item -Recurse -Force</code></pre>
-a stiskněte **Enter**.</li>
-- Vyčkejte na dokončení požadované akce a aplikaci následně zavřete.
-
-> Čištění TEMP (starší verze Windows)
-
-- Otevřete si nabídku **Start** / **Metro**.
-- Do vyhledávání zadejte:
-<li style="list-style-type: none"><pre><code>cmd</code></pre></li>
-- Na nalezenou položku klikněte pravým tlačítkem a zvolte možnost: ![admin](https://mople71.cz/img/icons/admin.png) **Spustit jako správce**.
-- Do příkazové řádky zadejte následující příkaz:
-<li style="list-style-type: none"><pre><code>del /s /f /q %TEMP%</code></pre>
 a stiskněte **Enter**.</li>
 - Vyčkejte na dokončení požadované akce a aplikaci následně zavřete.
 
@@ -144,28 +134,6 @@ a stiskněte **Enter**.</li>
 
 <div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
 Tímto jste nastavili automatické mazání zbytečných souborů, které se spustí jednou za 14 dní. Dále se již o&nbsp;nic nemusíte starat.</p></div>
-
-<br>
-
-### Rozebrání funkcí a činností skriptu:
-
-> Funkce skriptu Duster:
-
-- zálohuje uživatelský registr
-- otevře seznam aplikací, ze kterého můžete odinstalovat veškeré nevyužívané programy
-- maže dočasné soubory
-- maže přebytečné věci startující po spuštění
-- umožňuje nastavit a následně spouští nástroj Čištění disku
-- odstraňuje body obnovy a omezuje velikost jejich úložiště
-- odstraňuje přebytečné úlohy
-- čistí DNS cache
-- kontroluje integritu OS
-
-> Funkce skriptu Dusting:
-
-- zálohuje uživatelský registr
-- maže dočasné soubory
-- spouští nástroj Čištění disku
 
 <br><br><hr>
 

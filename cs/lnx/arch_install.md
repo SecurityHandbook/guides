@@ -166,11 +166,10 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <li style="list-style-type: none"><pre><code>useradd -m -G wheel -s /bin/bash uživatelské_jméno</code></pre></li>
 - Změňte heslo uživatele.
 <li style="list-style-type: none"><pre><code>passwd uživatelské_jméno</code></pre></li>
-- Nastavte **sudo**. Sjeďte na konec souboru, nalezněte řádek <span class="red">#%wheel ALL=(ALL) ALL</span> a odstraňte mřížku na jeho začátku.
-<li style="list-style-type: none"><pre><code>EDITOR=nano visudo</code></pre></li>
-<li style="list-style-type: none"><pre><code>## Uncomment to allow members of group wheel to execute any command
-%wheel ALL=(ALL) ALL
-...</code></pre></li>
+- Nastavte **sudo**. Sjeďte na konec souboru a přidejte následující řádek.
+<li style="list-style-type: none"><pre><code>EDITOR=rnano visudo</code></pre></li>
+<li style="list-style-type: none"><pre><code>...
+uživatelské_jméno ALL=(ALL) ALL</code></pre></li>
 - Změny uložte.
 
 <br>
