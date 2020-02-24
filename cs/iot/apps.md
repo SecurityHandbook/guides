@@ -140,4 +140,4 @@ Osobní seznam používaných aplikací a jejich nastavení. Většina je open-s
 
 <br><br><hr>
 
-<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://securityhandbook.cz/img/sm/smile.svg" alt="smile"></h3>

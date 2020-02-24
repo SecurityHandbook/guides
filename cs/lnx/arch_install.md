@@ -4,7 +4,7 @@ Aktualizovaný postup ke korektní instalaci distribuce *Arch Linux* není vždy
 <br>
 
 ## Instalační médium
-Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vytváříte instalační médium z **OS Windows**, jednoduše použijte [Rufus](https://guide.mople71.cz/cs/wnt/rufus.php).
+Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vytváříte instalační médium z **OS Windows**, jednoduše použijte [Rufus](https://guides.securityhandbook.cz/cs/wnt/rufus.php).
 
 - Otevřete si [následující stránku](https://pkg.adfinis-sygroup.ch/archlinux/iso/latest/).
 - Stáhněte si nejnovější *ISO* a jeho *SIG* podpis.
@@ -339,4 +339,4 @@ Tímto jste nainstalovali Arch Linux a provedli jeho základní konfiguraci.</p>
 
 <br><br><hr>
 
-<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://securityhandbook.cz/img/sm/smile.svg" alt="smile"></h3>

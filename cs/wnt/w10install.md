@@ -12,7 +12,7 @@ Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.m
 
 ## Vytvoření instalačního média Windows 10:
 
-- Vytvořte instalační médium z ISO souboru, pro USB doporučím program [Rufus](https://rufus.ie/) (návod [zde](https://guide.mople71.cz/cs/wnt/rufus.php)).
+- Vytvořte instalační médium z ISO souboru, pro USB doporučím program [Rufus](https://rufus.ie/) (návod [zde](https://guides.securityhandbook.cz/cs/wnt/rufus.php)).
 - Nabootujte z vytvořeného instalačního média.
 - Zkontrolujte konfiguraci jazyka a klávesnice a klikněte na tlačítko <span class="green">Další</span>.
 - Klikněte na tlačítko <span class="green">Nainstalovat</span>.
@@ -40,10 +40,10 @@ select disk X         //místo "X" dosaďte číslo vašeho systémového disku
 clean                 //vyčistí zvolený disk
 exit
 exit</code></pre></li>
-<li style="list-style-type: none">![w10diskpart](https://guide.mople71.cz/img/cs/w10diskpart.png)</li>
-- Ve výběru disků klikněte na tlačítko: ![upd](https://guide.mople71.cz/img/cs/upd.png)
+<li style="list-style-type: none">![w10diskpart](https://guides.securityhandbook.cz/img/cs/w10diskpart.png)</li>
+- Ve výběru disků klikněte na tlačítko: ![upd](https://guides.securityhandbook.cz/img/cs/upd.png)
 - Zvolte prázdný vyčištěný systémový disk a pokračujte v instalaci.
 
 <br><br><hr>
 
-<h3 class="nocol">Hezký den. <img class="smile" src="https://mople71.cz/img/sm/smile.svg" alt="smile"></h3>
+<h3 class="nocol">Hezký den. <img class="smile" src="https://securityhandbook.cz/img/sm/smile.svg" alt="smile"></h3>
