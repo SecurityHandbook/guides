@@ -13,8 +13,3 @@
 
 ## OS Linux:
 - [Instalace Arch Linux](https://guide.mople71.cz/cs/lnx/arch_install.php)
-
-<br>
-
-## OS Android:
-- [Seznam aplikací](https://guide.mople71.cz/cs/iot/apps.php)

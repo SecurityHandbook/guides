@@ -65,17 +65,17 @@ Pokud chcete i tak používat CCleaner, doporučuji stáhnout si portable verzi 
 K bezpečné údržbě vašeho OS používejte vestavěné nástroje Windows.
 
 <div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
-Následující postup je vhodné provádět 1x za 3 měsíce.</p></div>
+Následující postup je vhodné provádět 1x za několik měsíců.</p></div>
 
 <h3 class="nocol">![cleanmgr](https://securityhandbook.cz/img/icons/cleanmgr.png) Disk Space Cleanup Manager</h3>
 
 - Otevřete si **hledání Windows**, do vyhledávacího pole zadejte:
 <li style="list-style-type: none"><pre><code>cleanmgr</code></pre></li>
-- Na nalezenou položku klikněte pravým tlačítkem a zvolte možnost: ![admin](https://securityhandbook.cz/img/icons/admin.png) **Spustit jako správce**.
+- Nalezenou položku otevřete.
 - Budete-li vyzváni k výběru disku k pročištění, ponechte výchozí nastavení (*systémový disk C*) a klikněte na tlačítko <span class="green">OK</span>.
-- Otevře se nabídka souborů ke smazání. Zatrhněte veškeré dostupné možnosti kromě **Stažené soubory** a **Záložní soubory aktualizace**.
+- Otevře se nabídka souborů ke smazání. Zde zatrhněte veškeré dostupné možnosti kromě **Mezipaměť shaderů DirectX**, **Stažené soubory** a **Miniatury**.
 - Klikněte na <span class="green">OK</span> a odsouhlaste odstranění souborů.
-- Nechte aplikaci pracovat, po dokončení požadovaného čištění se sama ukončí.
+- Nechte aplikaci pracovat, po dokončení činnosti se sama ukončí.
 
 <br>
 
@@ -85,31 +85,81 @@ Následující postup je vhodné provádět 1x za dva týdny, případně měsí
 <h3 class="nocol">![cmd](https://securityhandbook.cz/img/icons/cmd.png) Čištění TEMP</h3>
 
 - Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell</span>.
-<li style="list-style-type: none">![wx](https://guides.securityhandbook.cz/img/cs/wx.png)</li>
 - Do příkazové řádky zadejte následující příkaz:
 <li style="list-style-type: none"><pre><code>Get-ChildItem -Recurse $Env:TMP | Remove-Item -Recurse -Force</code></pre>
 a stiskněte **Enter**.</li>
-- Vyčkejte na dokončení požadované akce a aplikaci následně zavřete.
+- Vyčkejte na dokončení požadované akce a aplikaci následně zavřete. Případné chybové hlášky ignorujte, některé soubory nemusí být možné odstranit, pokud jsou používány.
 
 <br><br><hr><br>
 
-## Automatizace výše uvedených kroků:
+## Vsuvka: Málo místa na disku?
+Zkuste několik následujících tipů:
 
-Výše uvedené postupy nejsou nijak automatizované, čímž mají velikou nevýhodu vůči čističům třetích stran, které v některých případech běží po celou dobu práce s OS (povzdech).
+> Pročištění záložních souborů
 
-Není ovšem problém si výše zmíněné kroky automatizovat sám &ndash; je to práce na pár minut, která přinese kýžený výsledek.
+<div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
+Po aplikování následujících kroků nebude možné odinstalovat předchozí aktualizace OS.</p></div>
 
-<h3 class="nocol">![bat](https://securityhandbook.cz/img/icons/bat.png) Duster</h3>
+- Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell (správce)</span>.
+<li style="list-style-type: none">![wx](https://guides.securityhandbook.cz/img/cs/wx.png)</li>
+- Do příkazové řádky zadejte následující příkaz:
+<li style="list-style-type: none"><pre><code>sfc /scannow</code></pre></li>
+- Spustí se kontrola integrity systémových souborů. Před odstraněním zastaralých záložních souborů je sken žádoucí.
+- Po dokončení skenu odstraňte nepotřebné záložní soubory:
+<li style="list-style-type: none"><pre><code>dism /online /cleanup-image /startcomponentcleanup /resetbase</code></pre></li>
+- Vyčkejte na dokončení požadované akce a následně restartujte OS.
 
-- Stáhněte si [Duster](https://securityhandbook.cz/duster.zip).
-- Uložte a obsah archivu vyextrahujte <span class="blue">na Plochu</span>.
-- Na skript jménem <span class="green">safesvc</span> klikněte pravým tlačítkem a zvolte možnost: ![admin](https://securityhandbook.cz/img/icons/admin.png) **Spustit jako správce**.
-- Postupujte dle pokynů skriptu, na konci procesu vám řekne o souhlas k restartu OS.
+
+> Hloubkové Vyčištění disku
+
+- Otevřete si **hledání Windows**, do vyhledávacího pole zadejte:
+<li style="list-style-type: none"><pre><code>cleanmgr</code></pre></li>
+- Na nalezenou položku klikněte na pravým tlačítkem a zvolte možnost: ![admin](https://securityhandbook.cz/img/icons/admin.png) **Spustit jako správce**.
+- Budete-li vyzváni k výběru disku k pročištění, ponechte výchozí nastavení (*systémový disk C*) a klikněte na tlačítko <span class="green">OK</span>.
+- Otevře se nabídka souborů ke smazání. Zatrhněte veškeré dostupné možnosti.
+- Klikněte na <span class="green">OK</span> a odsouhlaste odstranění souborů.
+- Nechte aplikaci pracovat, po dokončení činnosti se sama ukončí.
+- Restartujte OS.
+
+
+> Body obnovy
+
+- Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell (správce)</span>.
+<li style="list-style-type: none">![wx](https://guides.securityhandbook.cz/img/cs/wx.png)</li>
+- Do příkazové řádky zadejte následující příkazy:
+<li style="list-style-type: none"><pre><code>vssadmin delete shadows /for=$Env:SystemDrive /all /quiet
+vssadmin resize shadowstorage /for=$Env:SystemDrive /on=$Env:SystemDrive /maxsize=2GB</code></pre></li>
+- Dojde k odstranění všech bodů obnovy a omezení velikostního limitu na 2 GiB. Vyčkejte na dokončení požadované akce a následně restartujte OS.
+
+
+> Nepotřebné aplikace (po spuštění)
+
+- Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Aplikace a funkce</span>.
+- V seznamu identifikujte nepotřebné aplikace, které již pouze zabírají místo na disku, a odinstalujte je.
+- V záložce <span class="green">Po spuštění</span> vypněte zbytečné položky zpomalující start OS.
+- Aplikaci zavřete.
+
+<br><br><hr><br>
+
+## Automatizace bezpečného čištění OS:
+
+Výše uvedené dva kroky nejsou nijak automatizované, čímž v komfortu výrazně zaostávají za pseudo-čističi třetích stran. Není ovšem problém si výše zmíněné kroky automatizovat sám &ndash; je to práce na pár minut, která přinese kýžený výsledek.
+
+<h3 class="nocol">![cleanmgr](https://securityhandbook.cz/img/icons/cleanmgr.png) Vyčištění disku &ndash; nastavení úlohy</h3>
+
+- Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell</span>.
+<li style="list-style-type: none">![wx](https://guides.securityhandbook.cz/img/cs/wx.png)</li>
+- Do příkazové řádky zadejte následující příkaz:
+<li style="list-style-type: none"><pre><code>cleanmgr /sageset:1</code></pre></li>
+- Otevře se konfigurace automatické úlohy Vyčištění disku. Zatrhněte veškeré dostupné možnosti kromě **Mezipaměť shaderů DirectX**, **Stažené soubory** a **Miniatury**.
+- Klikněte na <span class="green">OK</span>.
 
 <br>
 
 <h3 class="nocol">![taskschd](https://securityhandbook.cz/img/icons/taskschd.png) Naplánování úlohy &ndash; dusting</h3>
 
+- Stáhněte si skript [Dusting](https://github.com/lhajn/WNT_scripts/releases/download/v1/dusting.zip).
+- Uložte a obsah archivu vyextrahujte <span class="blue">na Plochu</span>.
 - Skript jménem <span class="green">dusting</span>, který slouží k pravidelnému čištění, přesuňte z Plochy do <span class="blue">kořene systémového disku (**C:\**)</span>.
 - Stiskněte kláv. zkratku ![win](https://securityhandbook.cz/img/icons/wkey.png) <span class="ks">+ R</span>, do textového pole zadejte:
 <li style="list-style-type: none"><pre><code>taskschd.msc</code></pre>
@@ -126,9 +176,8 @@ a stiskněte **Enter**.</li>
 - Klikněte na <span class="green">Další</span>.
 - Zatrhněte položku: ![task3](https://guides.securityhandbook.cz/img/cs/duster2.png)
 - Klikněte na tlačítko <span class="green">Dokončit</span>.
-- Ve vlastnostech zatrhněte následující položku: ![task4](https://guides.securityhandbook.cz/img/cs/duster3.png)
-- V horním menu vlastností se přesuňte do záložky <span class="green">Nastavení</span>.
-- Zde zatrněte následující položku: ![task5](https://guides.securityhandbook.cz/img/cs/duster4.png)
+- Otevřou se vlastnosti úlohy. V horním menu vlastností se přesuňte do záložky **Nastavení**.
+- Zde zatrněte následující položku: ![task4](https://guides.securityhandbook.cz/img/cs/duster4.png)
 - Klikněte na tlačítko <span class="green">OK</span>.
 - Plánovač úloh zavřete.
 
