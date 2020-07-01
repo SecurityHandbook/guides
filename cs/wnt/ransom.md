@@ -1,14 +1,14 @@
-# Zašifrovaná data &ndash; jak postupovat při infikaci ransomware
+# Zašifrovaná data – jak postupovat při infikaci ransomware
 
 Ransomware je aktuálně nejoblíbenější technika hackerů, jak si vcelku jednoduše vydělat slušné peníze. Jedná se o druh malware, který po svém spuštění uživateli zablokuje přístup ke všem datům (nejčastěji zašifrováním dat), a následně za jejich dešifrování požaduje peníze. Platby drtivá většina ransomware požaduje v relativně anonymní měně Bitcoin (BTC) či Monero (XMR).
 
-Ransomware se do OS nejčastěji dostane lidskou chybou &ndash; příloha k mailu, zdánlivě bezpečná aplikace, odkliknutí bezpečnostního varování apod. Také se ovšem do OS může dostat chybou v děravém síťovém SW jako Flash nebo Java, dokonce někdy stačí pouze otevřít stránku se škodlivou reklamou.
+Ransomware se do OS nejčastěji dostane lidskou chybou – příloha k mailu, zdánlivě bezpečná aplikace, odkliknutí bezpečnostního varování apod. Také se ovšem do OS může dostat chybou v děravém síťovém SW jako Flash nebo Java, dokonce někdy stačí pouze otevřít stránku se škodlivou reklamou.
 
-Z těchto důvodů ransomware představuje obrovské riziko pro jednotlivce i společnosti. Infekce ransomware není neobvyklá a není to žádná ostuda &ndash; může se to stát komukoli (také už jsem si svojí chybou znehodnotil mnoho svých dat, nutno ovšem poznamenat, že vše neprodleně obnovil ze zálohy).
+Z těchto důvodů ransomware představuje obrovské riziko pro jednotlivce i společnosti. Infekce ransomware není neobvyklá a není to žádná ostuda – může se to stát komukoli (také už jsem si svojí chybou znehodnotil mnoho svých dat, nutno ovšem poznamenat, že vše neprodleně obnovil ze zálohy).
 
 <span class="red">Je důrazně doporučeno nic neplatit</span>, jelikož tím autory podporujete k další činnosti. Bohužel, někdy to je jediná cesta, jak svá cenná data získat zpět. Veřejnost si často myslí, že ransomware není žádný problém, že stačí chvíli hledat na internetu a na daný druh ransomware najdete dekrypter (aplikace, která umožňuje soubory zadarmo rozšifrovat). Není to tak úplně pravda.
 
-Níže si povíme, jak správně identifikovat rodinu ransomware, zjistit, zdali pro ni existuje dekrypter &ndash; pokud ano, jak obnovit data. Následně si řekneme, jak se ransomware zbavit.
+Níže si povíme, jak správně identifikovat rodinu ransomware, zjistit, zdali pro ni existuje dekrypter – pokud ano, jak obnovit data. Následně si řekneme, jak se ransomware zbavit.
 
 Než začneme, měli bychom zmínit ještě jednu věc. Některé rodiny ransomware ve svém zobrazovacím okně zobrazují odpočítávání a hrozí postupným mazáním dat (zde [příklad](https://guides.securityhandbook.cz/img/en/jigsaw.png)). V takovém případě je doporučeno v prvé řadě <span class="red">PC urychleně vypnout a již nezapínat!</span>
 
@@ -36,7 +36,7 @@ Po zajištění vzorku ransomware jej analyzujte webovou službou [VirusTotal](h
 - Po dokončení analýzy se vám zobrazí výsledky.
 - Zde můžete vidět, jak daný ransomware detekují různé AV. Důležité informace také můžete naleznout v komentářích.</li>
 
-Nyní tedy snad víme, o co se jedná. Díky tomu můžeme snadno dohledat dekrypter &ndash; pokud existuje. Pokud ne, máme v tuto chvíli smůlu.
+Nyní tedy snad víme, o co se jedná. Díky tomu můžeme snadno dohledat dekrypter – pokud existuje. Pokud ne, máme v tuto chvíli smůlu.
 
 <br>
 
@@ -59,7 +59,7 @@ Pokud můžete, překopírujte veškerá svá zašifrovaná data na jiné úlož
 
 > Možné výsledky ID Ransomware
 
-- V případě snadné možnosti obnovy dat IDR zobrazí následující hlášku a obvykle vás pošle přímo k dekryptoru &ndash; stačí kliknout na <span class="red">Klikněte zde pro více informací o ****</span>.
+- V případě snadné možnosti obnovy dat IDR zobrazí následující hlášku a obvykle vás pošle přímo k dekryptoru – stačí kliknout na <span class="red">Klikněte zde pro více informací o ****</span>.
 <li style="list-style-type: none">![idrw2](https://guides.securityhandbook.cz/img/cs/idrw2.png)</li>
 - V případě složitější a problematičtější možnosti obnovy dat zobrazí IDR následující hlášku. V takovém případě to již chce použít Google a mít nadprůměrné znalosti IT. Nebo si zde založte téma, rádi vám pomůžeme.
 <li style="list-style-type: none">![idrw3](https://guides.securityhandbook.cz/img/cs/idrw3.png)</li>
@@ -101,7 +101,7 @@ Návody na čistou instalaci + vyčištění disku (DISKPART část v návodech)
 ## Krok #4: Prevence
 **Zálohovat, zálohovat, zálohovat.**
 
-Chcete-li vědět, jak se účinně bránit před ransomware, vyhraďte si chvíli volného času a pročtěte si celé [FAQ Bezpečnosti](https://faq.mople71.cz/cs/).
+Chcete-li vědět, jak se účinně bránit před ransomware, vyhraďte si chvíli volného času a pročtěte si celou [Příručku Bezpečnosti](https://securityhandbook.cz/cs/).
 
 <br><br><hr>
 

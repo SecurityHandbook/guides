@@ -1,5 +1,5 @@
 # Odvirování Windows pomocí záchranného disku
-Pokud selže odstranění malware přes OS, případně nelze OS ani zavést, je nutné použít *live OS s antimalware systémem* na externím CD / USB disku. I k tomuto postupu je nezbytný přístup k internetu. Nejkomfortnějším způsobem je připojení síťovým kabelem. Níže naleznete postup pro **Bitdefender Rescue CD** a **Kaspersky Rescue Disk** &ndash; použitelné jsou obě varianty, i jejich kombinace.
+Pokud selže odstranění malware přes OS, případně nelze OS ani zavést, je nutné použít *live OS s antimalware systémem* na externím CD / USB disku. I k tomuto postupu je nezbytný přístup k internetu. Nejkomfortnějším způsobem je připojení síťovým kabelem. Níže naleznete postup pro **Bitdefender Rescue CD** a **Kaspersky Rescue Disk** – použitelné jsou obě varianty, i jejich kombinace.
 
 <br>
 

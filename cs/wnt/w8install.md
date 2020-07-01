@@ -22,7 +22,7 @@ Instalační ISO je volně dosutpné ke stáhnutí ze stránek MS: https://www.m
 
 <br><br><hr><br>
 
-## DISKPART &ndash; vyčištění disku
+## DISKPART – vyčištění disku
 
 Pokud vytváříte nový OS z důvodu problémů s předchozí instalací, je rozumné před instalací kompletně vyčistit disk. Tento postup je také standardem při instalaci na nový disk.
 

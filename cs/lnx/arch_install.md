@@ -1,8 +1,4 @@
 # Instalace Arch Linux
-Aktualizovaný postup ke korektní instalaci distribuce *Arch Linux* není vždy v českém jazyce dostupný. Jedná se v zásadě o jednoduchý proces, každý krok je logický a srozumitelný, navíc při dostatečné praxi zabere pouze cca. 30 minut. Tento návod slouží (zatím) spíše pro osobní použití.
-
-<br>
-
 ## Instalační médium
 Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vytváříte instalační médium z **OS Windows**, jednoduše použijte [Rufus](https://guides.securityhandbook.cz/cs/wnt/rufus.php).
 
@@ -13,7 +9,7 @@ Návod na vytvoření instalačního média je určen pro **OS Linux**. Pokud vy
 - Vložte USB disk do PC.
 - Zjistěte jeho identifikátor.
 <li style="list-style-type: none"><pre><code>lsblk</code></pre></li>
-- Následně jej odpojte &ndash; pokud byl automaticky připojen. (místo <span class="red">x</span> vždy dosaďte příslušné písmeno)
+- Následně jej odpojte – pokud byl automaticky připojen. (místo <span class="red">x</span> vždy dosaďte příslušné písmeno)
 <li style="list-style-type: none"><pre><code>sudo umount /dev/sdx</code></pre></li>
 - Rozbalte na něj instalační soubory *Arch Linux*.
 <li style="list-style-type: none"><pre><code>sudo dd bs=4M if=./archlinux-\*.iso of=/dev/sdx status=progress && sync</code></pre></li>
@@ -117,20 +113,17 @@ mount /dev/sdx4 /mnt/tmp</code></pre></li>
 ## Instalace
 - Upravte seznam zrcadel pro stahování balíčků. Řádky mažete klávesovou zkratkou **Ctrl** + **K**. Následně zbylé servery upravíte pro přístup přes https. Změny zavřete a uložíte **Ctrl** + **X** a klávesou <span class="red">Y</span>.
 <li style="list-style-type: none"><pre><code>nano /etc/pacman.d/mirrorlist</code></pre></li>
-<li style="list-style-type: none"><pre><code>##
-## Arch Linux repository mirrorlist
-## Filtered by mirror score from mirror status page
-## Generated on 2019-03-01
-##
-
-## Switzerland
-Server = https://pkg.adfinis-sygroup.ch/archlinux/$repo/os/$arch
-## Iceland
+<li style="list-style-type: none"><pre><code>## Iceland
 Server = https://mirror.system.is/arch/$repo/os/$arch
 ## Switzerland
-Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch</code></pre></li>
+Server = https://pkg.adfinis-sygroup.ch/archlinux/$repo/os/$arch
+## Czechia
+Server = https://ftp.sh.cvut.cz/arch/$repo/os/$arch
+## Switzerland
+Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch
+</code></pre></li>
 - Vytvořte OS:
-<li style="list-style-type: none"><pre><code>pacstrap /mnt base base-devel</code></pre></li>
+<li style="list-style-type: none"><pre><code>pacstrap /mnt base base-devel linux nano</code></pre></li>
 - Po dokončení vytvořte *fstab* pro nový OS. Následně jej zkontrolujte.
 <li style="list-style-type: none"><pre><code>genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab</code></pre></li>
@@ -141,7 +134,7 @@ cat /mnt/etc/fstab</code></pre></li>
 - Přepněte se do nového OS.
 <li style="list-style-type: none"><pre><code>arch-chroot /mnt</code></pre></li>
 - Nastavte čas:
-<li style="list-style-type: none"><pre><code>ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
+<li style="list-style-type: none"><pre><code>ln -s /usr/share/zoneinfo/Europe/Prague /etc/localtime
 hwclock --systohc</code></pre></li>
 - Nastavte lokalizaci (jazyk) OS. Chcete-li češtinu, v seznamu nalezněte řádek <span class="red">#cs_CZ.UTF-8</span> a odstraňte mřížku na jeho začátku. Změny uložte.
 <li style="list-style-type: none"><pre><code>nano /etc/locale.gen</code></pre></li>
@@ -162,15 +155,12 @@ grub-mkconfig -o /boot/grub/grub.cfg</code></pre></li>
 <br>
 
 ### Vytvoření uživatele:
-- Vytvořte svého uživatele jako správce.
-<li style="list-style-type: none"><pre><code>useradd -m -G wheel -s /bin/bash uživatelské_jméno</code></pre></li>
-- Změňte heslo uživatele.
+- Vytvořte účet správce.
+<li style="list-style-type: none"><pre><code>useradd -m -G wheel uživatelské_jméno</code></pre></li>
+- Změňte heslo správce.
 <li style="list-style-type: none"><pre><code>passwd uživatelské_jméno</code></pre></li>
-- Nastavte **sudo**. Sjeďte na konec souboru a přidejte následující řádek.
-<li style="list-style-type: none"><pre><code>EDITOR=rnano visudo</code></pre></li>
-<li style="list-style-type: none"><pre><code>...
-uživatelské_jméno ALL=(ALL) ALL</code></pre></li>
-- Změny uložte.
+- Povolte **sudo** pro účet správce.
+<li style="list-style-type: none"><pre><code>echo "uživatelské_jméno ALL=(ALL) ALL" > /etc/sudoers.d/uživatelské_jméno</code></pre></li>
 
 <br>
 
@@ -203,21 +193,22 @@ pacman -S xf86-video-intel mesa libva-intel-driver</code></pre></li>
 <br>
 
 ### HW-specific konfigurace:
-> Staré ThinkPad NTBs:
+> (pra)Staré ThinkPad NTBs
 
 - Nainstalujte si **tp-smapi**.
 <li style="list-style-type: none"><pre><code>pacman -S tp_smapi</code></pre></li>
+- Následně neinstalujte balíček **acpi** v sekci *Konfigurace*.
 
-> Novější ThinkPad NTBs (Sandy Bridge a výše):
+> Novější ThinkPad NTBs (Sandy Bridge a výše)
 
 - Nainstalujte si **acpi-call**.
 <li style="list-style-type: none"><pre><code>pacman -S acpi_call</code></pre></li>
+- Následně neinstalujte balíček **acpi** v sekci *Konfigurace*.
 
 > Virtuální OS přes GNOME Boxes
 
 - Nainstalujte si grafický ovladač **qxl** a **spice-vdagent**.
-<li style="list-style-type: none"><pre><code>pacman -S xf86-video-qxl spice-vdagent
-systemctl enable spice-vdagentd</code></pre></li>
+<li style="list-style-type: none"><pre><code>pacman -S xf86-video-qxl spice-vdagent</code></pre></li>
 
 > Broadcom WiFi adaptér:
 
@@ -233,19 +224,19 @@ systemctl enable spice-vdagentd</code></pre></li>
 <br>
 
 ### Grafické rozhraní:
-- Nainstalujte **GNOME** jakožto nejpoužívanější desktopové prostředí.
+- Nainstalujte desktopové prostředí **GNOME**.
 <li style="list-style-type: none"><pre><code>pacman -S gdm
 pacman -S gnome network-manager-applet gnome-tweaks</code></pre></li>
 - Z výběru balíčků zvolte následující:
-<li style="list-style-type: none"><pre><code>epiphany, evince, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters,
-gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer, gnome-keyring, gnome-menus, gnome-screenshot,
-gnome-session, gnome-settings-daemon, gnome-shell, gnome-shell-extensions,
-gnome-system-monitor, gnome-terminal, gnome-themes-extra,
+<li style="list-style-type: none"><pre><code>epiphany, file-roller, gedit, gnome-backgrounds, gnome-calculator, gnome-characters,
+gnome-clocks, gnome-color-manager, gnome-control-center, gnome-font-viewer, gnome-keyring, gnome-menus, gnome-screenshot, gnome-shell-extensions,
+gnome-system-monitor, gnome-terminal,
 gnome-video-effects, gvfs, gvfs-goa, gvfs-google,
 gvfs-mtp, mousetweaks, mutter, nautilus, networkmanager,
-xdg-user-dirs-gtk, gnome-boxes</code></pre></li>
+xdg-user-dirs-gtk, gnome-boxes, gnome-software</code></pre></li>
 - Čísla výše zmíněných balíčků (v čase se mění) zadejte následujícím způsobem a stiskněte **Enter**.
-<li style="list-style-type: none"><pre><code>5,6,8,9,10,12,...,64</code></pre></li>
+<li style="list-style-type: none"><pre><code>4,6,8,9,11,12,...,63</code></pre></li>
+- Ponechte výchozí zdroj pro *libjack*.
 - Nastavte spuštění *GNOME* při startu:
 <li style="list-style-type: none"><pre><code>systemctl enable gdm
 systemctl enable NetworkManager</code></pre></li>
@@ -257,29 +248,33 @@ systemctl enable NetworkManager</code></pre></li>
 
 <br>
 
-### První přihlášení:
-- Pokud jste vše udělali správně, za chvíli se zobrazí přihlašovací obrazovka *GNOME* s vaším vytvořeným účtem. Přihlaste se.
-- Otevřete si <span class="green">Nastavení</span> a změňte klávesnici na českou/dle vaší preference.
-- Přihlaste se na WiFi.
+### Nastavení po prvním přihlášení:
+- Po chvíli se zobrazí přihlašovací obrazovka *GNOME* s vytvořeným účtem správce. Přihlaste se.
+- Připojte se k internetu.
 - Otevřete si <span class="green">Terminál</span>.
-- Zakažte přihlášení uživatele **root** a zároveň ověřte korektní konfiguraci *sudo*:
+- Deaktivujte uživatele **root** a zároveň ověřte korektní konfiguraci *sudo*:
 <li style="list-style-type: none"><pre><code>sudo passwd -l root</code></pre></li>
-- Nainstalujte důležité knihovny a aplikace:
-<li style="list-style-type: none"><pre><code>sudo pacman -S nftables asp mpv flatpak git acpi tlp youtube-dl libmatroska gstreamer-vaapi
+- Doinstalujte důležité balíčky:
+<li style="list-style-type: none"><pre><code>sudo pacman -S acpi asp flatpak git gnu-free-fonts gstreamer-vaapi libmatroska nftables ninja noto-fonts noto-fonts-emoji tlp ttf-dejavu ttf-droid ttf-liberation ttf-roboto vi
 sudo systemctl enable tlp
 sudo systemctl enable tlp-sleep
 sudo systemctl mask systemd-rfkill
 sudo systemctl mask systemd-rfkill.socket</code></pre></li>
-- Restartujte OS.
+- Nainstalujte si **Paper Icon Theme**:
+<li style="list-style-type: none"><pre><code>git clone https://aur.archlinux.org/paper-icon-theme-git.git
+cd paper-icon-theme-git
+makepkg -sri</code></pre></li>
+- Otevřete si <span class="green">Vylepšení</span> a zvolte **Paper** jako motiv pro ikony.
+- Vytvořte v nastavení běžného uživatele pro denní provoz (podrobnější návod [zde](https://securityhandbook.cz/cs/lnx/index.php#lnx2.2).
+- Restartujte OS a přihlaste se na vytvořeného uživatele.
 
 <br>
 
 ### Aplikace:
-- Otevřete si <span class="green">Terminál</span>. Nainstalujte flatpak verze aplikací. Preferujte *flathub* repo při dotazu.
-<li style="list-style-type: none"><pre><code>flatpak remote-add --if-not-exists gnome https://sdk.gnome.org/gnome.flatpakrepo
+- Otevřete si <span class="green">Terminál</span>. Nainstalujte aplikace / flatpak verze aplikací.
+<li style="list-style-type: none"><pre><code>sudo pacman -S mpv youtube-dl chromium
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gnome.Evince
-sudo chmod 600 /usr/share/applications/evince.desktop
 flatpak install flathub org.gnome.eog
 flatpak install flathub org.libreoffice.LibreOffice
 flatpak install flathub org.gimp.GIMP
@@ -287,20 +282,15 @@ flatpak install flathub io.atom.Atom
 flatpak install flathub io.atom.electron.BaseApp
 flatpak install flathub com.transmissionbt.Transmission
 flatpak install flathub com.valvesoftware.Steam</code></pre></li>
-- Nainstalujte si **Paper Icon Theme**:
-<li style="list-style-type: none"><pre><code>git clone https://aur.archlinux.org/paper-icon-theme-git.git
-cd paper-icon-theme-git
-makepkg -sri</code></pre></li>
-- Otevřete si <span class="green">Vylepšení</span> a zvolte **Paper** jako motiv pro ikony.
 
 <br>
 
 ### Zabezpečení:
-- Nastavte */tmp* oddíl jako **noexec**. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
-- Nepoužíváte-li *IPv6*, zakažte jej. Nápověda [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2), je třeba upravit syntax.
-- Nastavte CZ.NIC *DNSSEC* &ndash; 193.17.47.1,185.43.135.1 &ndash; návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx2).
-- Nastavte **firewall** (podrobnější návod [zde](https://faq.mople71.cz/cs/lnx/adv.php#lnx1.1)):
-<li style="list-style-type: none"><pre><code>sudo -i
+- Nastavte */tmp* oddíl jako **noexec**. Nápověda [zde](https://securityhandbook.cz/cs/lnx/index.php#lnx2.1), je třeba upravit syntax.
+- Nepoužíváte-li *IPv6*, zakažte jej. Nápověda [zde](https://securityhandbook.cz/cs/lnx/index.php#lnx2.3), je třeba upravit syntax.
+- Nastavte CZ.NIC *DNSSEC* – 193.17.47.1,185.43.135.1 – návod [zde](https://securityhandbook.cz/cs/lnx/index.php#lnx2.3).
+- Nastavte **firewall** (podrobnější návod [zde](https://securityhandbook.cz/cs/lnx/adv.php#lnx2.1)):
+<li style="list-style-type: none"><pre><code>sudo su -
 nano /etc/nftables.conf
 ---------------------
 table inet filter {
@@ -323,19 +313,11 @@ table inet filter {
 systemctl enable nftables
 systemctl start nftables
 nft list ruleset</code></pre></li>
-- Na citlivé záležitosti jako bankovnictví používejte prohlížeč **GNOME Web**. Chcete-li na internetu provádět i jiné činnosti, nainstalujte si **Chromium**.
-- Bezpečně nastavte prohlížeč(e). Návod [zde](https://faq.mople71.cz/cs/lnx/index.php#lnx4).
+- Bezpečně nastavte prohlížeč(e). Návod [zde](https://securityhandbook.cz/cs/lnx/index.php#lnx4).
 - Restartujte OS.
 
 <div class="alert success"><p><em class="icon-ok-circled"></em>**Úspěch**<br>
 Tímto jste nainstalovali Arch Linux a provedli jeho základní konfiguraci.</p></div>
-
-<br><br><hr><br>
-
-## Doporučení:
-- V prvé řadě si prostudujte <a href="https://faq.mople71.cz/cs/lnx/index.php#lnx">FAQ Bezpečnosti</a>. Až se pořádně seznámíte s OS a rozšíříte své znalosti, prostudujte si i <a href="https://faq.mople71.cz/cs/lnx/adv.php#lnx">FAQ Bezpečnosti pro pokročilé</a>.
-- Preferujte Flatpak verze aplikací.
-- ...
 
 <br><br><hr>
 

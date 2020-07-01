@@ -1,5 +1,5 @@
 # Používání chytrého zařízení s OS Android bez sledování Google
-Jedinou cestou, jak zařízení zamezit sběru analytických dat na úrovni systému, je vytvoření nového OS bez služeb Google &ndash; čistého AOSP. To s sebou ovšem přináší řadu omezení a většina modelů navíc rozumné používání vlastního OS nepodporuje. Máte-li zařízení se službami Google, můžete jejich těžbu dat omezit na rozumnou úroveň, kompletně se jí ovšem nevyhnete.
+Jedinou cestou, jak zařízení zamezit sběru analytických dat na úrovni systému, je vytvoření nového OS bez služeb Google – čistého AOSP. To s sebou ovšem přináší řadu omezení a většina modelů navíc rozumné používání vlastního OS nepodporuje. Máte-li zařízení se službami Google, můžete jejich těžbu dat omezit na rozumnou úroveň, kompletně se jí ovšem nevyhnete.
 
 <br>
 
@@ -20,7 +20,7 @@ Systém > Resetovat možnosti > Vymazat data (tovární reset)
 <br>
 
 ### Omezení oprávnění aplikací:
-Služby Google Play &ndash; Seznamy hovorů, Tělesné senzory
+Služby Google Play – Seznamy hovorů, Tělesné senzory
 ...
 
 <br>

@@ -1,6 +1,6 @@
 # Bezpečné čištění OS Windows
 
-<h3 class="red">![ch](https://securityhandbook.cz/img/icons/ccleaner.png) Varování &ndash; CCleaner a podobné čističe</h3>
+<h3 class="red">![ch](https://securityhandbook.cz/img/icons/ccleaner.png) Varování – CCleaner a podobné čističe</h3>
 
 Čističe OS čistící registry jsou pro OS nebezpečné, nedoporučované a Microsoftem nepodporované.
 
@@ -20,9 +20,9 @@ Spousta problémů s OS, se kterými se denně potkávám na různých fórech, 
 <div class="alert info"><p><em class="icon-info-circled"></em>**Info**<br>
 Registr je velká hierarchická databáze obsahující miliony hodnot, které určují chod OS. Máte-li nějakou databázi, také do ní nevpustíte naprosto cizí program, který vám databázi vyčistí na základě svých generických pravidel.</p></div>
 
-Tyto čističe zaručují zrychlení registru. Pokud bychom měli prohledat celý registr, chvíli to zabere &ndash; nic takového ovšem aplikace nedělají. Aplikace se obracejí do specifických oblastí registru, kde očekávají nějaké své nastavení, případně chtějí manipulovat s COM objekty &ndash; tuto operaci mohou provést během několika milisekund.
+Tyto čističe zaručují zrychlení registru. Pokud bychom měli prohledat celý registr, chvíli to zabere – nic takového ovšem aplikace nedělají. Aplikace se obracejí do specifických oblastí registru, kde očekávají nějaké své nastavení, případně chtějí manipulovat s COM objekty – tuto operaci mohou provést během několika milisekund.
 
-Z toho vyplývá, že žádné zrychlení ve většině případu nenastane. Pokud by aplikace chtěla prohledat celý registr, přečtení všech hodnot mého HKCU klíče zabralo OS 314 milisekund &ndash; zrychlení (pokud nějaké) by se pohybovalo v řádu desítek až stovek mikrosekund.
+Z toho vyplývá, že žádné zrychlení ve většině případu nenastane. Pokud by aplikace chtěla prohledat celý registr, přečtení všech hodnot mého HKCU klíče zabralo OS 314 milisekund – zrychlení (pokud nějaké) by se pohybovalo v řádu desítek až stovek mikrosekund.
 
 Celé čištění/optimalizování registru je tedy z technického hlediska založeno pouze na tzv. [placebo efektu](https://cs.wikipedia.org/wiki/Placebo).
 
@@ -143,9 +143,9 @@ vssadmin resize shadowstorage /for=$Env:SystemDrive /on=$Env:SystemDrive /maxsiz
 
 ## Automatizace bezpečného čištění OS:
 
-Výše uvedené dva kroky nejsou nijak automatizované, čímž v komfortu výrazně zaostávají za pseudo-čističi třetích stran. Není ovšem problém si výše zmíněné kroky automatizovat sám &ndash; je to práce na pár minut, která přinese kýžený výsledek.
+Výše uvedené dva kroky nejsou nijak automatizované, čímž v komfortu výrazně zaostávají za pseudo-čističi třetích stran. Není ovšem problém si výše zmíněné kroky automatizovat sám – je to práce na pár minut, která přinese kýžený výsledek.
 
-<h3 class="nocol">![cleanmgr](https://securityhandbook.cz/img/icons/cleanmgr.png) Vyčištění disku &ndash; nastavení úlohy</h3>
+<h3 class="nocol">![cleanmgr](https://securityhandbook.cz/img/icons/cleanmgr.png) Vyčištění disku – nastavení úlohy</h3>
 
 - Stiskněte kláv. zkratku <img src="https://securityhandbook.cz/img/icons/wkey.png" alt="win"> <span class="ks">+ X</span> a z nabídky vyberte <span class="green">Windows PowerShell</span>.
 <li style="list-style-type: none">![wx](https://guides.securityhandbook.cz/img/cs/wx.png)</li>
@@ -156,7 +156,7 @@ Výše uvedené dva kroky nejsou nijak automatizované, čímž v komfortu výra
 
 <br>
 
-<h3 class="nocol">![taskschd](https://securityhandbook.cz/img/icons/taskschd.png) Naplánování úlohy &ndash; dusting</h3>
+<h3 class="nocol">![taskschd](https://securityhandbook.cz/img/icons/taskschd.png) Naplánování úlohy – dusting</h3>
 
 - Stáhněte si skript [Dusting](https://github.com/lhajn/WNT_scripts/releases/download/v1/dusting.zip).
 - Uložte a obsah archivu vyextrahujte <span class="blue">na Plochu</span>.
